@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TMToDoTableViewController.h"
 
 @interface TMUITabBarController : UITabBarController
+@property (retain, nonatomic) IBOutlet UIView *tabController;
 
 @end

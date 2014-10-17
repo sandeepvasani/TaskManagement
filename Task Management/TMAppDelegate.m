@@ -8,8 +8,10 @@
 
 #import "TMAppDelegate.h"
 
-@implementation TMAppDelegate
 
+
+@implementation TMAppDelegate
+@synthesize menuTC,todoVC;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -17,11 +19,40 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
+    //Add tab views here
+    self.todoVC=[[TMToDoTableViewController alloc] initWithNibName:@"TMToDoTableViewController" bundle:nil];
+    
+    //initialize the tab bar controller
+     self.menuTC = [[TMUITabBarController alloc] initWithNibName:@"TMUITabBarController" bundle:[NSBundle mainBundle]];
+    
+    
+    //NSArray* controllers = [NSArray arrayWithObjects:self.todoVC, nil];
+    
+    //set the view controllers for the tab bar controller
+   self.menuTC.viewControllers = [NSArray arrayWithObjects:self.todoVC, nil];
+    
+    //add the tab bar controllers view to the window
+    [self.window addSubview:self.todoVC.view];
+    
+    self.window.rootViewController = self.menuTC;
+    
+   
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+
+-(void)dealloc
+{
+    [menuTC release];
+    [super dealloc];
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

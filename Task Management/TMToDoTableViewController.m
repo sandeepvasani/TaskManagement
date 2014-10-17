@@ -8,9 +8,6 @@
 
 #import "TMToDoTableViewController.h"
 
-@interface TMToDoTableViewController ()
-
-@end
 
 @implementation TMToDoTableViewController
 
@@ -23,6 +20,17 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+       self.title=@"ToDo";
+        self.tabBarItem.image=[UIImage imageNamed:@"todo.png"];
+    }
+    return self;
 }
 
 - (void)didReceiveMemoryWarning

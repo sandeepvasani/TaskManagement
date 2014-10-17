@@ -8,9 +8,6 @@
 
 #import "TMUITabBarController.h"
 
-@interface TMUITabBarController ()
-
-@end
 
 @implementation TMUITabBarController
 
@@ -18,8 +15,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-    }
+            }
     return self;
 }
 
@@ -35,4 +31,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    
+    [_tabController release];
+    [super dealloc];
+}
 @end

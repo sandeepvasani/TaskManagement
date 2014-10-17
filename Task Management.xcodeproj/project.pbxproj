@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19021B8D19F0AF3A000B8EBF /* TMToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */; };
+		19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */; };
+		19021B9119F0BE5B000B8EBF /* todo@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 19021B9019F0BE5B000B8EBF /* todo@2X.png */; };
 		1987B4B519DC664600197B78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1987B4B419DC664600197B78 /* Foundation.framework */; };
 		1987B4B719DC664600197B78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1987B4B619DC664600197B78 /* CoreGraphics.framework */; };
 		1987B4B919DC664600197B78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1987B4B819DC664600197B78 /* UIKit.framework */; };
@@ -22,6 +25,8 @@
 		1987B4D619DC664600197B78 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1987B4BA19DC664600197B78 /* CoreData.framework */; };
 		1987B4DE19DC664600197B78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1987B4DC19DC664600197B78 /* InfoPlist.strings */; };
 		1987B4E019DC664600197B78 /* Task_ManagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1987B4DF19DC664600197B78 /* Task_ManagementTests.m */; };
+		1987B4EC19DC67C600197B78 /* TMUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1987B4EA19DC67C600197B78 /* TMUITabBarController.m */; };
+		1987B4ED19DC67C600197B78 /* TMUITabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19021B8A19F0AF3A000B8EBF /* TMToDoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMToDoTableViewController.h; sourceTree = "<group>"; };
+		19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMToDoTableViewController.m; sourceTree = "<group>"; };
+		19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMToDoTableViewController.xib; sourceTree = "<group>"; };
+		19021B9019F0BE5B000B8EBF /* todo@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo@2X.png"; sourceTree = "<group>"; };
 		1987B4B119DC664600197B78 /* Task Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1987B4B419DC664600197B78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1987B4B619DC664600197B78 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +62,9 @@
 		1987B4DB19DC664600197B78 /* Task ManagementTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Task ManagementTests-Info.plist"; sourceTree = "<group>"; };
 		1987B4DD19DC664600197B78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1987B4DF19DC664600197B78 /* Task_ManagementTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task_ManagementTests.m; sourceTree = "<group>"; };
+		1987B4E919DC67C600197B78 /* TMUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMUITabBarController.h; sourceTree = "<group>"; };
+		1987B4EA19DC67C600197B78 /* TMUITabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMUITabBarController.m; sourceTree = "<group>"; };
+		1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMUITabBarController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19021B8619F0A7FE000B8EBF /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1987B4E919DC67C600197B78 /* TMUITabBarController.h */,
+				1987B4EA19DC67C600197B78 /* TMUITabBarController.m */,
+				19021B8A19F0AF3A000B8EBF /* TMToDoTableViewController.h */,
+				19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		19021B8719F0A80A000B8EBF /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1987B4C519DC664600197B78 /* TMAppDelegate.h */,
+				1987B4C619DC664600197B78 /* TMAppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		19021B8819F0A815000B8EBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1987B4C819DC664600197B78 /* Task_Management.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		19021B8919F0A942000B8EBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */,
+				1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		19021B8F19F0BE45000B8EBF /* images */ = {
+			isa = PBXGroup;
+			children = (
+				19021B9019F0BE5B000B8EBF /* todo@2X.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		1987B4A819DC664500197B78 = {
 			isa = PBXGroup;
 			children = (
@@ -115,10 +172,12 @@
 		1987B4BC19DC664600197B78 /* Task Management */ = {
 			isa = PBXGroup;
 			children = (
-				1987B4C519DC664600197B78 /* TMAppDelegate.h */,
-				1987B4C619DC664600197B78 /* TMAppDelegate.m */,
+				19021B8F19F0BE45000B8EBF /* images */,
+				19021B8919F0A942000B8EBF /* Views */,
+				19021B8819F0A815000B8EBF /* Model */,
+				19021B8719F0A80A000B8EBF /* Delegate */,
+				19021B8619F0A7FE000B8EBF /* View Controller */,
 				1987B4CB19DC664600197B78 /* Images.xcassets */,
-				1987B4C819DC664600197B78 /* Task_Management.xcdatamodeld */,
 				1987B4BD19DC664600197B78 /* Supporting Files */,
 			);
 			path = "Task Management";
@@ -229,8 +288,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */,
+				19021B9119F0BE5B000B8EBF /* todo@2X.png in Resources */,
 				1987B4C119DC664600197B78 /* InfoPlist.strings in Resources */,
 				1987B4CC19DC664600197B78 /* Images.xcassets in Resources */,
+				1987B4ED19DC67C600197B78 /* TMUITabBarController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1987B4EC19DC67C600197B78 /* TMUITabBarController.m in Sources */,
 				1987B4C319DC664600197B78 /* main.m in Sources */,
 				1987B4C719DC664600197B78 /* TMAppDelegate.m in Sources */,
+				19021B8D19F0AF3A000B8EBF /* TMToDoTableViewController.m in Sources */,
 				1987B4CA19DC664600197B78 /* Task_Management.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Task Management/Task Management-Prefix.pch";
 				INFOPLIST_FILE = "Task Management/Task Management-Info.plist";
@@ -383,6 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Task Management/Task Management-Prefix.pch";
 				INFOPLIST_FILE = "Task Management/Task Management-Info.plist";
@@ -450,6 +516,7 @@
 				1987B4E519DC664600197B78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1987B4E619DC664600197B78 /* Build configuration list for PBXNativeTarget "Task ManagementTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +525,7 @@
 				1987B4E819DC664600197B78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
