@@ -10,28 +10,61 @@
 
 
 @implementation TMToDoTableViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
+@synthesize toDoItem;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-       self.title=@"ToDo";
+        //self.title=@"ToDo";
+        self.title=@"Todo List";
+        self.tabBarItem.title=@"Todo";
         self.tabBarItem.image=[UIImage imageNamed:@"todo.png"];
     }
     return self;
 }
+
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // self.toDoItems = [[NSMutableArray alloc] init];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd  target:self action:@selector(insertNewObject:)];
+    
+    
+}
+
+- (IBAction)insertNewObject: (id)sender {
+    UIAlertView* alert= [[UIAlertView alloc] initWithTitle:@"New To-Do List"
+                                                   message:@"Title for new list:"
+                                                  delegate:self
+                                         cancelButtonTitle:@"Cancel"
+                                         otherButtonTitles:@"Create", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+}
+
+
+- (void)alertView:(UIAlertView *)alert didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex > 0) {
+        NSString* title = [alert textFieldAtIndex: 0].text;
+        if (title.length > 0) {
+            self.toDoItem = [[NSMutableArray alloc] init];
+              [self.toDoItem addObject:title];
+            //self.toDoItem.completed = NO;
+           NSLog(@"array: %@", toDoItem);
+           
+        }
+    }
+}
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -45,16 +78,22 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.toDoItem count];
 }
 
+
+-(void) dealloc
+{
+    [toDoItem release];
+    [super dealloc];
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

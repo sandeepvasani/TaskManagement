@@ -23,6 +23,7 @@
     
     //Add tab views here
     self.todoVC=[[TMToDoTableViewController alloc] initWithNibName:@"TMToDoTableViewController" bundle:nil];
+    UINavigationController *navigationcontroller = [[[UINavigationController alloc] initWithRootViewController:todoVC] autorelease];
     
     //initialize the tab bar controller
      self.menuTC = [[TMUITabBarController alloc] initWithNibName:@"TMUITabBarController" bundle:[NSBundle mainBundle]];
@@ -31,12 +32,12 @@
     //NSArray* controllers = [NSArray arrayWithObjects:self.todoVC, nil];
     
     //set the view controllers for the tab bar controller
-   self.menuTC.viewControllers = [NSArray arrayWithObjects:self.todoVC, nil];
+   self.menuTC.viewControllers = [NSArray arrayWithObjects:navigationcontroller, nil];
     
     //add the tab bar controllers view to the window
-    [self.window addSubview:self.todoVC.view];
+    [self.window addSubview:self.menuTC.view];
     
-    self.window.rootViewController = self.menuTC;
+    //self.window.rootViewController = self.menuTC;
     
    
     // Override point for customization after application launch.

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TMToDoTableViewController : UITableViewController
-
+@property(nonatomic,retain) NSMutableArray *toDoItem;
 @end
