@@ -10,4 +10,6 @@
 
 @interface TMToDoTableViewController : UITableViewController
 @property(nonatomic,retain) NSMutableArray *toDoItem;
+- (IBAction)insertNewObject:(id)sender;
+
 @end
