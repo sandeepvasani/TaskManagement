@@ -110,6 +110,7 @@
     }
     // Configure the cell... setting the text of our cell's label
     cell.textLabel.text = [self.toDoItem objectAtIndex:indexPath.row];
+     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;}
 
 
