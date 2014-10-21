@@ -7,10 +7,12 @@
 //
 
 #import "TMToDoTableViewController.h"
+#import "TodoItem.h"
+#import "TMAppDelegate.h"
 
 
 @implementation TMToDoTableViewController
-@synthesize toDoItem;
+@synthesize toDoItem,managedObjectContext,fetchedResultsController;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,6 +39,8 @@
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd  target:self action:@selector(insertNewObject:)];
     
+    TMAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext=appDelegate.managedObjectContext;
     
 }
 
@@ -56,15 +60,62 @@
         NSString* title = [alert textFieldAtIndex: 0].text;
         if (title.length > 0) {
            
-              [self.toDoItem addObject:title];
+              //[self.toDoItem addObject:title];
+            [self addTodoItem:title];
             //self.toDoItem.completed = NO;
-           [self.tableView reloadData];
-           NSLog(@"array: %@", toDoItem);
-           
+            [self resetFetchedResultsController];
+            [self.tableView reloadData];
+          
+            
         }
     }
 }
 
+-(void)addTodoItem:(NSString *)name
+{
+    TodoItem *todoitemObj = (TodoItem *)[NSEntityDescription insertNewObjectForEntityForName:@"TodoItem" inManagedObjectContext:managedObjectContext];
+    [todoitemObj setName:name];
+    
+    NSError *error;if(![managedObjectContext save:&error])
+    {
+        // Handle the error.
+    }
+    else
+    {
+        // Successfully added the record.
+    }
+}
+
+
+- (void)resetFetchedResultsController
+{
+    fetchedResultsController = nil;
+}
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (fetchedResultsController != nil) {
+        return fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"TodoItem" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:YES];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    
+    NSError *error = nil;
+    if (![fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error: %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return fetchedResultsController;
+}
 
 
 
@@ -78,22 +129,24 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return [self.toDoItem count];
+   return [[[self fetchedResultsController] fetchedObjects] count];;
 }
 
 
 -(void) dealloc
 {
     [toDoItem release];
+    [managedObjectContext release];
+    [fetchedResultsController release];
     [super dealloc];
 }
 
@@ -109,9 +162,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Configure the cell... setting the text of our cell's label
-    cell.textLabel.text = [self.toDoItem objectAtIndex:indexPath.row];
+    
+   TodoItem *toDoItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    
+    cell.textLabel.text = toDoItem.name;
+    //cell.textLabel.text = [[self fetchedResultsController] objectAtIndexPath:indexPath];
      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    return cell;}
+    return cell;
+}
 
 
 /*

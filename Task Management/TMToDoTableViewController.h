@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TMToDoTableViewController : UITableViewController
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain) NSMutableArray *toDoItem;
 - (IBAction)insertNewObject:(id)sender;
-
+@property (readonly, strong, nonatomic) NSFetchedResultsController * fetchedResultsController;
 @end

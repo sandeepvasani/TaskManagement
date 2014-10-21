@@ -37,7 +37,7 @@
     //add the tab bar controllers view to the window
     [self.window addSubview:self.menuTC.view];
     
-    //self.window.rootViewController = self.menuTC;
+    self.window.rootViewController = self.menuTC;
     
    
     // Override point for customization after application launch.
