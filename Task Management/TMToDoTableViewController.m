@@ -9,6 +9,7 @@
 #import "TMToDoTableViewController.h"
 #import "TodoItem.h"
 #import "TMAppDelegate.h"
+#import "TMToDoListTableViewController.h"
 
 
 @implementation TMToDoTableViewController
@@ -85,6 +86,7 @@
         // Successfully added the record.
     }
 }
+
 
 
 - (void)resetFetchedResultsController
@@ -181,18 +183,28 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        NSError *error;
+        if (![context save:&error])
+        {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"ToDo" message:@"Sorry the Item Cannot be deleted" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alertView show];
+            [alertView release];
+        }
+        [self resetFetchedResultsController];
+        [self.tableView reloadData];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -210,7 +222,7 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
@@ -218,13 +230,16 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
+    TMToDoListTableViewController *detailViewController = [[TMToDoListTableViewController alloc] initWithNibName:@"TMToDoListTableViewController" bundle:nil];
+    TodoItem *toDoItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    detailViewController.toDoItemTitle=toDoItem.name;
+    detailViewController.toDoItemIndex= indexPath.item;
     // Pass the selected object to the new view controller.
     
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
 }
-*/
+
 
 @end

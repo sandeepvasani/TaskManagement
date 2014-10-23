@@ -11,7 +11,6 @@
 		19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */; };
 		19021B9119F0BE5B000B8EBF /* todo@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 19021B9019F0BE5B000B8EBF /* todo@2X.png */; };
 		19564B8F19F5D7B400BE1204 /* TodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 19564B8E19F5D7B400BE1204 /* TodoItem.m */; };
-		19564B9219F5D7D200BE1204 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 19564B9119F5D7D200BE1204 /* Todo.m */; };
 		1987B4B519DC664600197B78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1987B4B419DC664600197B78 /* Foundation.framework */; };
 		1987B4B719DC664600197B78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1987B4B619DC664600197B78 /* CoreGraphics.framework */; };
 		1987B4B919DC664600197B78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1987B4B819DC664600197B78 /* UIKit.framework */; };
@@ -29,6 +28,9 @@
 		1987B4E019DC664600197B78 /* Task_ManagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1987B4DF19DC664600197B78 /* Task_ManagementTests.m */; };
 		1987B4EC19DC67C600197B78 /* TMUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1987B4EA19DC67C600197B78 /* TMUITabBarController.m */; };
 		1987B4ED19DC67C600197B78 /* TMUITabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */; };
+		19A8139319F89B4000E211AB /* TMToDoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */; };
+		19A8139419F89B4000E211AB /* TMToDoListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */; };
+		19A8139719F8A80000E211AB /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8139619F8A80000E211AB /* Todo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +50,6 @@
 		19021B9019F0BE5B000B8EBF /* todo@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo@2X.png"; sourceTree = "<group>"; };
 		19564B8D19F5D7B400BE1204 /* TodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoItem.h; sourceTree = "<group>"; };
 		19564B8E19F5D7B400BE1204 /* TodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoItem.m; sourceTree = "<group>"; };
-		19564B9019F5D7D200BE1204 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
-		19564B9119F5D7D200BE1204 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		1987B4B119DC664600197B78 /* Task Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1987B4B419DC664600197B78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1987B4B619DC664600197B78 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,6 +71,11 @@
 		1987B4E919DC67C600197B78 /* TMUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMUITabBarController.h; sourceTree = "<group>"; };
 		1987B4EA19DC67C600197B78 /* TMUITabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMUITabBarController.m; sourceTree = "<group>"; };
 		1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMUITabBarController.xib; sourceTree = "<group>"; };
+		19A8139019F89B4000E211AB /* TMToDoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMToDoListTableViewController.h; sourceTree = "<group>"; };
+		19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMToDoListTableViewController.m; sourceTree = "<group>"; };
+		19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMToDoListTableViewController.xib; sourceTree = "<group>"; };
+		19A8139519F8A80000E211AB /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Todo.h; path = ../Todo.h; sourceTree = "<group>"; };
+		19A8139619F8A80000E211AB /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Todo.m; path = ../Todo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +111,8 @@
 				1987B4EA19DC67C600197B78 /* TMUITabBarController.m */,
 				19021B8A19F0AF3A000B8EBF /* TMToDoTableViewController.h */,
 				19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */,
+				19A8139019F89B4000E211AB /* TMToDoListTableViewController.h */,
+				19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -123,8 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				1987B4C819DC664600197B78 /* Task_Management.xcdatamodeld */,
-				19564B9019F5D7D200BE1204 /* Todo.h */,
-				19564B9119F5D7D200BE1204 /* Todo.m */,
+				19A8139519F8A80000E211AB /* Todo.h */,
+				19A8139619F8A80000E211AB /* Todo.m */,
 				19564B8D19F5D7B400BE1204 /* TodoItem.h */,
 				19564B8E19F5D7B400BE1204 /* TodoItem.m */,
 			);
@@ -136,6 +143,7 @@
 			children = (
 				19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */,
 				1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */,
+				19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 			files = (
 				19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */,
 				19021B9119F0BE5B000B8EBF /* todo@2X.png in Resources */,
+				19A8139419F89B4000E211AB /* TMToDoListTableViewController.xib in Resources */,
 				1987B4C119DC664600197B78 /* InfoPlist.strings in Resources */,
 				1987B4CC19DC664600197B78 /* Images.xcassets in Resources */,
 				1987B4ED19DC67C600197B78 /* TMUITabBarController.xib in Resources */,
@@ -325,9 +334,10 @@
 				1987B4C319DC664600197B78 /* main.m in Sources */,
 				1987B4C719DC664600197B78 /* TMAppDelegate.m in Sources */,
 				19021B8D19F0AF3A000B8EBF /* TMToDoTableViewController.m in Sources */,
+				19A8139319F89B4000E211AB /* TMToDoListTableViewController.m in Sources */,
 				19564B8F19F5D7B400BE1204 /* TodoItem.m in Sources */,
 				1987B4CA19DC664600197B78 /* Task_Management.xcdatamodeld in Sources */,
-				19564B9219F5D7D200BE1204 /* Todo.m in Sources */,
+				19A8139719F8A80000E211AB /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,7 +2,7 @@
 //  Todo.m
 //  Task Management
 //
-//  Created by  on 10/20/14.
+//  Created by  on 10/22/14.
 //  Copyright (c) 2014 CSCI 5737.01. All rights reserved.
 //
 
@@ -11,8 +11,11 @@
 
 @implementation Todo
 
-@dynamic name;
 @dynamic completed;
+@dynamic name;
+@dynamic todoitemIndex;
+@dynamic creationDate;
+
 
 
 - (void)awakeFromInsert
@@ -21,5 +24,4 @@
     //[self setPrimitiveValue:@NO forKey:@"completed"];
     [self setValue:[NSDate date] forKey:@"creationDate"];
 }
-
 @end
