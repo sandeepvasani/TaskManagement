@@ -16,7 +16,11 @@
 @dynamic todoitemIndex;
 @dynamic creationDate;
 
-
+- (void)toggleCompletion
+{
+    self.completed = [NSNumber numberWithBool:![self.completed boolValue]];
+    
+}
 
 - (void)awakeFromInsert
 {

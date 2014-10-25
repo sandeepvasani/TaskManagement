@@ -63,7 +63,7 @@
 {
     Todo *todoObj = (Todo *)[NSEntityDescription insertNewObjectForEntityForName:@"Todo" inManagedObjectContext:managedObjectContext];
     [todoObj setName:name];
-    //[todoObj setTodoitemIndex:];
+    //[todoObj t];
     [todoObj setValue:[NSNumber numberWithInt:self.toDoItemIndex] forKey:@"todoitemIndex"];
     NSError *error;if(![managedObjectContext save:&error])
     {
@@ -199,22 +199,24 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    // Pass the selected object to the new view controller.
+    Todo *toDo = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    [toDo toggleCompletion];
     
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    NSError *error;
+    [self.managedObjectContext save:&error];
+    
+    [self resetFetchedResultsController];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
-*/
+
 
 -(void)dealloc
 {

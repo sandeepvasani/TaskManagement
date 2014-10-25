@@ -16,5 +16,5 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * todoitemIndex;
 @property (nonatomic, retain) NSDate * creationDate;
-
+- (void)toggleCompletion;
 @end
