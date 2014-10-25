@@ -23,5 +23,6 @@
     [super awakeFromInsert];
     //[self setPrimitiveValue:@NO forKey:@"completed"];
     [self setValue:[NSDate date] forKey:@"creationDate"];
+    [self setPrimitiveValue:@NO forKey:@"completed"];
 }
 @end

@@ -140,7 +140,7 @@
 {
 
     // Return the number of rows in the section.
-   return [[[self fetchedResultsController] fetchedObjects] count];;
+   return [[[self fetchedResultsController] fetchedObjects] count];
 }
 
 
