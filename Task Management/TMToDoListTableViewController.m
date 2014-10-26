@@ -28,7 +28,27 @@
     self.managedObjectContext=appDelegate.managedObjectContext;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+//    self.tableView.delegate=self;
+//     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.backgroundColor = [UIColor blackColor];
 }
+
+
+//-(UIColor*)colorForIndex:(NSInteger) index {
+//    NSUInteger itemCount = [[[self fetchedResultsController] fetchedObjects] count];
+//    float val = ((float)index / (float)itemCount) * 0.5;
+//    return [UIColor colorWithRed: 1.0 green:val blue: 0.0 alpha:1.0];
+//}
+//
+//#pragma mark - UITableViewDataDelegate protocol methods
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 50.0f;
+//}
+//
+//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    cell.backgroundColor = [self colorForIndex:indexPath.row];
+//}
 
 
 - (IBAction)insertNewObject: (id)sender {
@@ -170,18 +190,29 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        NSError *error;
+        if (![context save:&error])
+        {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"ToDo" message:@"Sorry the item cannot be deleted" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alertView show];
+            [alertView release];
+        }
+        [self resetFetchedResultsController];
+        [self.tableView reloadData];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
+
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

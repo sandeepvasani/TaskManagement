@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TMToDoListTableViewController : UITableViewController
+@interface TMToDoListTableViewController : UITableViewController <UITableViewDelegate>
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSFetchedResultsController * fetchedResultsController;
 @property (retain) NSString* toDoItemTitle;
