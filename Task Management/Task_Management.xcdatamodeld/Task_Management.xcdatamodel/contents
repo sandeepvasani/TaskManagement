@@ -4,14 +4,15 @@
         <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="todoitemIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="todoitemlink" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TodoItem" inverseName="todolink" inverseEntity="TodoItem" syncable="YES"/>
     </entity>
     <entity name="TodoItem" representedClassName="TodoItem" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="todolink" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Todo" inverseName="todoitemlink" inverseEntity="Todo" syncable="YES"/>
     </entity>
     <elements>
         <element name="Todo" positionX="-54" positionY="-9" width="128" height="103"/>
-        <element name="TodoItem" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="TodoItem" positionX="-63" positionY="-270" width="128" height="88"/>
     </elements>
 </model>

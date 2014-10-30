@@ -230,10 +230,15 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    TMToDoListTableViewController *detailViewController = [[TMToDoListTableViewController alloc] initWithNibName:@"TMToDoListTableViewController" bundle:nil];
-    TodoItem *toDoItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    detailViewController.toDoItemTitle=toDoItem.name;
-    detailViewController.toDoItemIndex= indexPath.item;
+    TodoItem *todoItem = (TodoItem *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    //TMToDoListTableViewController *detailViewController = [[TMToDoListTableViewController alloc] initWithNibName:@"TMToDoListTableViewController" bundle:nil];
+   // TodoItem *toDoItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    
+    TMToDoListTableViewController *detailViewController = [[TMToDoListTableViewController alloc] initWithTodoItem:todoItem andManagedContext:self.managedObjectContext];
+    
+    //detailViewController.toDoItemTitle=toDoItem.name;
+    //detailViewController.toDoItemIndex= indexPath.item;
     // Pass the selected object to the new view controller.
     
     // Push the view controller.

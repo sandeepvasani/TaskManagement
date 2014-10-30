@@ -13,12 +13,29 @@
 
 
 @implementation TMToDoListTableViewController
-@synthesize toDoItemTitle,managedObjectContext,fetchedResultsController,toDoItemIndex;
+@synthesize fetchedResultsController;
+
+
+
+-(id)initWithTodoItem:(TodoItem *)todoItem andManagedContext:(NSManagedObjectContext *)context
+
+{
+    self = [super init];
+    if (self)
+    {
+        self.managedObjectContext = context;
+        self.todoItem = todoItem;
+        
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title= self.toDoItemTitle;
+    self.title= self.todoItem.name;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -81,11 +98,12 @@
 
 -(void)addTodo:(NSString *)name
 {
-    Todo *todoObj = (Todo *)[NSEntityDescription insertNewObjectForEntityForName:@"Todo" inManagedObjectContext:managedObjectContext];
+    Todo *todoObj = (Todo *)[NSEntityDescription insertNewObjectForEntityForName:@"Todo" inManagedObjectContext:self.managedObjectContext];
     [todoObj setName:name];
     //[todoObj t];
-    [todoObj setValue:[NSNumber numberWithInt:self.toDoItemIndex] forKey:@"todoitemIndex"];
-    NSError *error;if(![managedObjectContext save:&error])
+   //[todoObj setValue:[NSNumber numberWithInt:self.toDoItemIndex] forKey:@"todoitemIndex"];
+    [self.todoItem addTodolinkObject:todoObj];
+    NSError *error;if(![self.managedObjectContext save:&error])
     {
         // Handle the error.
         NSLog(@"errorrooro");
@@ -113,14 +131,14 @@
     [fetchRequest setEntity:entity];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                              @"(todoitemIndex == %d)", toDoItemIndex];
+                              @"todoitemlink=%@",self.todoItem];
     [fetchRequest setPredicate:predicate];
-    
+   // fetchRequest = self.todoItem.todolink;
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
-    fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Todo"];
     
     NSError *error = nil;
     if (![fetchedResultsController performFetch:&error]) {
@@ -151,6 +169,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
+   // return self.todoItem.todolink.count;
     return [[[self fetchedResultsController] fetchedObjects] count];
 }
 
@@ -167,7 +186,8 @@
     // Configure the cell... setting the text of our cell's label
     
     Todo *toDo = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    
+      //Todo *toDo = [self.todoItem.todolink.allObjects objectAtIndex:indexPath.row];
+   
     cell.textLabel.text = toDo.name;
     //cell.textLabel.text = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     if ([toDo.completed boolValue]) {
@@ -239,6 +259,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     Todo *toDo = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+     //Todo *toDo = [self.todoItem.todolink.allObjects objectAtIndex:indexPath.row];
     [toDo toggleCompletion];
     
     NSError *error;
@@ -251,8 +272,8 @@
 
 -(void)dealloc
 {
-    [toDoItemTitle release];
-    [managedObjectContext release];
+    //[toDoItemTitle release];
+    //[self.managedObjectContext release];
     [fetchedResultsController  release];
     [super dealloc];
 }
