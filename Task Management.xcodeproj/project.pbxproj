@@ -10,6 +10,13 @@
 		19021B8D19F0AF3A000B8EBF /* TMToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */; };
 		19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */; };
 		19021B9119F0BE5B000B8EBF /* todo@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 19021B9019F0BE5B000B8EBF /* todo@2X.png */; };
+		1971D2281A06BB3D004FE5AC /* TMPassManagerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971D2261A06BB3D004FE5AC /* TMPassManagerTC.m */; };
+		1971D2291A06BB3D004FE5AC /* TMPassManagerTC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1971D2271A06BB3D004FE5AC /* TMPassManagerTC.xib */; };
+		1971D22B1A06BE13004FE5AC /* file-list-tick-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1971D22A1A06BE13004FE5AC /* file-list-tick-7.png */; };
+		1971D22D1A06BE5E004FE5AC /* wallet.png in Resources */ = {isa = PBXBuildFile; fileRef = 1971D22C1A06BE5E004FE5AC /* wallet.png */; };
+		1971D22F1A06BFB5004FE5AC /* dollar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1971D22E1A06BFB5004FE5AC /* dollar@2x.png */; };
+		1971D2321A06C884004FE5AC /* Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971D2311A06C884004FE5AC /* Password.m */; };
+		1971D2351A06C884004FE5AC /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971D2341A06C884004FE5AC /* Login.m */; };
 		1987B4B519DC664600197B78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1987B4B419DC664600197B78 /* Foundation.framework */; };
 		1987B4B719DC664600197B78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1987B4B619DC664600197B78 /* CoreGraphics.framework */; };
 		1987B4B919DC664600197B78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1987B4B819DC664600197B78 /* UIKit.framework */; };
@@ -48,6 +55,16 @@
 		19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMToDoTableViewController.m; sourceTree = "<group>"; };
 		19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMToDoTableViewController.xib; sourceTree = "<group>"; };
 		19021B9019F0BE5B000B8EBF /* todo@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo@2X.png"; sourceTree = "<group>"; };
+		1971D2251A06BB3D004FE5AC /* TMPassManagerTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPassManagerTC.h; sourceTree = "<group>"; };
+		1971D2261A06BB3D004FE5AC /* TMPassManagerTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPassManagerTC.m; sourceTree = "<group>"; };
+		1971D2271A06BB3D004FE5AC /* TMPassManagerTC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMPassManagerTC.xib; sourceTree = "<group>"; };
+		1971D22A1A06BE13004FE5AC /* file-list-tick-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "file-list-tick-7.png"; sourceTree = "<group>"; };
+		1971D22C1A06BE5E004FE5AC /* wallet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet.png; sourceTree = "<group>"; };
+		1971D22E1A06BFB5004FE5AC /* dollar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dollar@2x.png"; sourceTree = "<group>"; };
+		1971D2301A06C884004FE5AC /* Password.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Password.h; sourceTree = "<group>"; };
+		1971D2311A06C884004FE5AC /* Password.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Password.m; sourceTree = "<group>"; };
+		1971D2331A06C884004FE5AC /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		1971D2341A06C884004FE5AC /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		1987B4B119DC664600197B78 /* Task Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1987B4B419DC664600197B78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1987B4B619DC664600197B78 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,6 +130,8 @@
 				19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */,
 				19A8139019F89B4000E211AB /* TMToDoListTableViewController.h */,
 				19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */,
+				1971D2251A06BB3D004FE5AC /* TMPassManagerTC.h */,
+				1971D2261A06BB3D004FE5AC /* TMPassManagerTC.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -130,6 +149,10 @@
 			isa = PBXGroup;
 			children = (
 				1987B4C819DC664600197B78 /* Task_Management.xcdatamodeld */,
+				1971D2331A06C884004FE5AC /* Login.h */,
+				1971D2341A06C884004FE5AC /* Login.m */,
+				1971D2301A06C884004FE5AC /* Password.h */,
+				1971D2311A06C884004FE5AC /* Password.m */,
 				19B6F94D1A01522E00B21960 /* Todo.h */,
 				19B6F94E1A01522E00B21960 /* Todo.m */,
 				19B6F94A1A01522E00B21960 /* TodoItem.h */,
@@ -144,6 +167,7 @@
 				19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */,
 				1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */,
 				19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */,
+				1971D2271A06BB3D004FE5AC /* TMPassManagerTC.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -151,6 +175,9 @@
 		19021B8F19F0BE45000B8EBF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1971D22A1A06BE13004FE5AC /* file-list-tick-7.png */,
+				1971D22E1A06BFB5004FE5AC /* dollar@2x.png */,
+				1971D22C1A06BE5E004FE5AC /* wallet.png */,
 				19021B9019F0BE5B000B8EBF /* todo@2X.png */,
 			);
 			name = images;
@@ -306,9 +333,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1971D2291A06BB3D004FE5AC /* TMPassManagerTC.xib in Resources */,
+				1971D22F1A06BFB5004FE5AC /* dollar@2x.png in Resources */,
 				19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */,
+				1971D22D1A06BE5E004FE5AC /* wallet.png in Resources */,
 				19021B9119F0BE5B000B8EBF /* todo@2X.png in Resources */,
 				19A8139419F89B4000E211AB /* TMToDoListTableViewController.xib in Resources */,
+				1971D22B1A06BE13004FE5AC /* file-list-tick-7.png in Resources */,
 				1987B4C119DC664600197B78 /* InfoPlist.strings in Resources */,
 				1987B4CC19DC664600197B78 /* Images.xcassets in Resources */,
 				1987B4ED19DC67C600197B78 /* TMUITabBarController.xib in Resources */,
@@ -331,12 +362,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1987B4EC19DC67C600197B78 /* TMUITabBarController.m in Sources */,
+				1971D2351A06C884004FE5AC /* Login.m in Sources */,
 				19B6F94C1A01522E00B21960 /* TodoItem.m in Sources */,
 				1987B4C319DC664600197B78 /* main.m in Sources */,
 				1987B4C719DC664600197B78 /* TMAppDelegate.m in Sources */,
 				19021B8D19F0AF3A000B8EBF /* TMToDoTableViewController.m in Sources */,
 				19A8139319F89B4000E211AB /* TMToDoListTableViewController.m in Sources */,
+				1971D2281A06BB3D004FE5AC /* TMPassManagerTC.m in Sources */,
 				1987B4CA19DC664600197B78 /* Task_Management.xcdatamodeld in Sources */,
+				1971D2321A06C884004FE5AC /* Password.m in Sources */,
 				19B6F94F1A01522E00B21960 /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
