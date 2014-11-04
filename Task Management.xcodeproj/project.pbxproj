@@ -10,6 +10,8 @@
 		19021B8D19F0AF3A000B8EBF /* TMToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */; };
 		19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */; };
 		19021B9119F0BE5B000B8EBF /* todo@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 19021B9019F0BE5B000B8EBF /* todo@2X.png */; };
+		195D02971A08549700B08BDE /* SavePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195D02951A08549700B08BDE /* SavePasswordViewController.m */; };
+		195D02981A08549700B08BDE /* SavePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195D02961A08549700B08BDE /* SavePasswordViewController.xib */; };
 		1971D2281A06BB3D004FE5AC /* TMPassManagerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971D2261A06BB3D004FE5AC /* TMPassManagerTC.m */; };
 		1971D2291A06BB3D004FE5AC /* TMPassManagerTC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1971D2271A06BB3D004FE5AC /* TMPassManagerTC.xib */; };
 		1971D22B1A06BE13004FE5AC /* file-list-tick-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1971D22A1A06BE13004FE5AC /* file-list-tick-7.png */; };
@@ -55,6 +57,9 @@
 		19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMToDoTableViewController.m; sourceTree = "<group>"; };
 		19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMToDoTableViewController.xib; sourceTree = "<group>"; };
 		19021B9019F0BE5B000B8EBF /* todo@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo@2X.png"; sourceTree = "<group>"; };
+		195D02941A08549700B08BDE /* SavePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavePasswordViewController.h; sourceTree = "<group>"; };
+		195D02951A08549700B08BDE /* SavePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavePasswordViewController.m; sourceTree = "<group>"; };
+		195D02961A08549700B08BDE /* SavePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavePasswordViewController.xib; sourceTree = "<group>"; };
 		1971D2251A06BB3D004FE5AC /* TMPassManagerTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPassManagerTC.h; sourceTree = "<group>"; };
 		1971D2261A06BB3D004FE5AC /* TMPassManagerTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPassManagerTC.m; sourceTree = "<group>"; };
 		1971D2271A06BB3D004FE5AC /* TMPassManagerTC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMPassManagerTC.xib; sourceTree = "<group>"; };
@@ -132,6 +137,8 @@
 				19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */,
 				1971D2251A06BB3D004FE5AC /* TMPassManagerTC.h */,
 				1971D2261A06BB3D004FE5AC /* TMPassManagerTC.m */,
+				195D02941A08549700B08BDE /* SavePasswordViewController.h */,
+				195D02951A08549700B08BDE /* SavePasswordViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 				19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */,
 				1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */,
 				19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */,
+				195D02961A08549700B08BDE /* SavePasswordViewController.xib */,
 				1971D2271A06BB3D004FE5AC /* TMPassManagerTC.xib */,
 			);
 			name = Views;
@@ -339,6 +347,7 @@
 				1971D22D1A06BE5E004FE5AC /* wallet.png in Resources */,
 				19021B9119F0BE5B000B8EBF /* todo@2X.png in Resources */,
 				19A8139419F89B4000E211AB /* TMToDoListTableViewController.xib in Resources */,
+				195D02981A08549700B08BDE /* SavePasswordViewController.xib in Resources */,
 				1971D22B1A06BE13004FE5AC /* file-list-tick-7.png in Resources */,
 				1987B4C119DC664600197B78 /* InfoPlist.strings in Resources */,
 				1987B4CC19DC664600197B78 /* Images.xcassets in Resources */,
@@ -365,6 +374,7 @@
 				1971D2351A06C884004FE5AC /* Login.m in Sources */,
 				19B6F94C1A01522E00B21960 /* TodoItem.m in Sources */,
 				1987B4C319DC664600197B78 /* main.m in Sources */,
+				195D02971A08549700B08BDE /* SavePasswordViewController.m in Sources */,
 				1987B4C719DC664600197B78 /* TMAppDelegate.m in Sources */,
 				19021B8D19F0AF3A000B8EBF /* TMToDoTableViewController.m in Sources */,
 				19A8139319F89B4000E211AB /* TMToDoListTableViewController.m in Sources */,

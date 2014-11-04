@@ -233,7 +233,7 @@
     TodoItem *todoItem = (TodoItem *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     
     //TMToDoListTableViewController *detailViewController = [[TMToDoListTableViewController alloc] initWithNibName:@"TMToDoListTableViewController" bundle:nil];
-   // TodoItem *toDoItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+ //  TodoItem *toDoItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     
     TMToDoListTableViewController *detailViewController = [[TMToDoListTableViewController alloc] initWithTodoItem:todoItem andManagedContext:self.managedObjectContext];
     

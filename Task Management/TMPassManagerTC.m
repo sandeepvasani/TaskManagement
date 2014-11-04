@@ -8,6 +8,7 @@
 
 #import "TMPassManagerTC.h"
 #import "TMAppDelegate.h"
+#import "SavePasswordViewController.h"
 
 
 @implementation TMPassManagerTC
@@ -139,7 +140,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Cell2";
     UITableViewCell *cell;
     
     cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -154,8 +155,7 @@
     //cell.textLabel.text = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
-    
-    return cell;
+       
 }
 
 
@@ -168,18 +168,30 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        int a =[[[self fetchedResultsController] fetchedObjects] count];
+        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        NSError *error;
+        if (![context save:&error])
+        {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Login" message:@"Sorry the Item Cannot be deleted" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alertView show];
+            [alertView release];
+        }
+        [self resetFetchedResultsController];
+        [self.tableView reloadData];
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -197,21 +209,23 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    Login *loginItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
+    SavePasswordViewController *detailViewController = [[SavePasswordViewController alloc] initWithSavePassword:loginItem andManagedContext:self.managedObjectContext];
     
     // Pass the selected object to the new view controller.
     
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
-*/
+
 
 @end
