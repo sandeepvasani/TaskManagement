@@ -21,5 +21,6 @@
 
 //@property (assign) NSInteger toDoItemIndex;
 @property (strong, nonatomic) Login *loginItem;
--(id)initWithSavePassword:(Login *)loginItem andManagedContext:(NSManagedObjectContext *)context;
+@property (strong,nonatomic) NSIndexPath * tableindexPath;
+-(id)initWithSavePassword:(Login *)loginItem andManagedContext:(NSManagedObjectContext *)context andTableIndexPath:(NSIndexPath*)indexPath;
 @end

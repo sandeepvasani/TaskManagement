@@ -97,6 +97,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Login" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
+    
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -215,11 +216,11 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     Login *loginItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    SavePasswordViewController *detailViewController = [[SavePasswordViewController alloc] initWithSavePassword:loginItem andManagedContext:self.managedObjectContext];
+    SavePasswordViewController *detailViewController = [[SavePasswordViewController alloc] initWithSavePassword:loginItem andManagedContext:self.managedObjectContext andTableIndexPath:indexPath];
     
     // Pass the selected object to the new view controller.
     

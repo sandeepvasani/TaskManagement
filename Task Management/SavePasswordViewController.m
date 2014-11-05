@@ -13,12 +13,13 @@
 
 @synthesize savePassword,saveUsername,label,managedObjectContext,fetchedResultsController;
 
--(id)initWithSavePassword:(Login *)loginItem andManagedContext:(NSManagedObjectContext *)context
+-(id)initWithSavePassword:(Login *)loginItem andManagedContext:(NSManagedObjectContext *)context andTableIndexPath:(NSIndexPath*)indexPath
 {
     self = [super init];
     if (self) {
         self.managedObjectContext = context;
         self.loginItem = loginItem;
+        self.tableindexPath=indexPath;
     }
     return self;
 }
@@ -27,6 +28,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+   if( [[[self fetchedResultsController] fetchedObjects] count]>0)
+    {
+        Password *pass = [[[self fetchedResultsController] fetchedObjects] firstObject];
+        saveUsername.text=pass.userName;
+        savePassword.text=pass.password;
+    
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,10 +71,11 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
                               @"login=%@",self.loginItem];
     [fetchRequest setPredicate:predicate];
+    
     // fetchRequest = self.todoItem.todolink;
-//    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:YES];
-//    NSArray *sortDescriptors = @[sortDescriptor];
-//    [fetchRequest setSortDescriptors:sortDescriptors];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"userName" ascending:YES];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    [fetchRequest setSortDescriptors:sortDescriptors];
     
     fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Password"];
     
@@ -86,6 +97,7 @@
     //[todoObj t];
     //[todoObj setValue:[NSNumber numberWithInt:self.toDoItemIndex] forKey:@"todoitemIndex"];
     //[self.loginItem ];
+    passwordObj.login=self.loginItem;
     NSError *error;if(![self.managedObjectContext save:&error])
     {
         // Handle the error.
