@@ -11,7 +11,7 @@
 
 
 @implementation TMAppDelegate
-@synthesize menuTC,todoVC,passTVC;
+@synthesize menuTC,todoVC,passTVC,expTVC;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -24,11 +24,12 @@
     //Add tab views here
     self.todoVC=[[TMToDoTableViewController alloc] initWithNibName:@"TMToDoTableViewController" bundle:nil];
     self.passTVC=[[TMPassManagerTC alloc] initWithNibName:@"TMPassManagerTC" bundle:nil];
+    self.expTVC=[[TMExpenseTable alloc] initWithNibName:@"TMExpenseTable" bundle:nil];
     
     //navigation
     UINavigationController *navigationcontroller1 = [[[UINavigationController alloc] initWithRootViewController:todoVC] autorelease];
      UINavigationController *navigationcontroller2 = [[[UINavigationController alloc] initWithRootViewController:passTVC] autorelease];
-    
+    UINavigationController *navigationcontroller3 = [[[UINavigationController alloc] initWithRootViewController:expTVC] autorelease];
     //initialize the tab bar controller
      self.menuTC = [[TMUITabBarController alloc] initWithNibName:@"TMUITabBarController" bundle:[NSBundle mainBundle]];
     
@@ -36,7 +37,7 @@
     //NSArray* controllers = [NSArray arrayWithObjects:self.todoVC, nil];
     
     //set the view controllers for the tab bar controller
-   self.menuTC.viewControllers = [NSArray arrayWithObjects:navigationcontroller1,navigationcontroller2, nil];
+   self.menuTC.viewControllers = [NSArray arrayWithObjects:navigationcontroller1,navigationcontroller2,navigationcontroller3,nil];
     
     //add the tab bar controllers view to the window
     [self.window addSubview:self.menuTC.view];
@@ -57,6 +58,7 @@
     [todoVC release];
     [passTVC release];
     [menuTC release];
+    [expTVC release];
     [super dealloc];
 }
 

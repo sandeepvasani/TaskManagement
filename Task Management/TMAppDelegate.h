@@ -10,12 +10,14 @@
 #import "TMUITabBarController.h"
 #import "TMToDoTableViewController.h"
 #import "TMPassManagerTC.h"
+#import "TMExpenseTable.h"
 @interface TMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) TMUITabBarController * menuTC;
 @property (nonatomic,retain) TMToDoTableViewController * todoVC;
 @property (nonatomic,retain) TMPassManagerTC *passTVC;
+@property (nonatomic,retain) TMExpenseTable *expTVC;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
