@@ -16,6 +16,8 @@
 		192E9E771A11691800C4ED23 /* TMExpenseDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192E9E751A11691800C4ED23 /* TMExpenseDetail.xib */; };
 		195D02971A08549700B08BDE /* SavePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195D02951A08549700B08BDE /* SavePasswordViewController.m */; };
 		195D02981A08549700B08BDE /* SavePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195D02961A08549700B08BDE /* SavePasswordViewController.xib */; };
+		196CC66A1A152BE1001B561E /* EnterMasterPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 196CC6681A152BE1001B561E /* EnterMasterPassword.m */; };
+		196CC66B1A152BE1001B561E /* EnterMasterPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196CC6691A152BE1001B561E /* EnterMasterPassword.xib */; };
 		1971D2281A06BB3D004FE5AC /* TMPassManagerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971D2261A06BB3D004FE5AC /* TMPassManagerTC.m */; };
 		1971D2291A06BB3D004FE5AC /* TMPassManagerTC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1971D2271A06BB3D004FE5AC /* TMPassManagerTC.xib */; };
 		1971D22B1A06BE13004FE5AC /* file-list-tick-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1971D22A1A06BE13004FE5AC /* file-list-tick-7.png */; };
@@ -72,6 +74,9 @@
 		195D02941A08549700B08BDE /* SavePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavePasswordViewController.h; sourceTree = "<group>"; };
 		195D02951A08549700B08BDE /* SavePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavePasswordViewController.m; sourceTree = "<group>"; };
 		195D02961A08549700B08BDE /* SavePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavePasswordViewController.xib; sourceTree = "<group>"; };
+		196CC6671A152BE1001B561E /* EnterMasterPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterMasterPassword.h; sourceTree = "<group>"; };
+		196CC6681A152BE1001B561E /* EnterMasterPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterMasterPassword.m; sourceTree = "<group>"; };
+		196CC6691A152BE1001B561E /* EnterMasterPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterMasterPassword.xib; sourceTree = "<group>"; };
 		1971D2251A06BB3D004FE5AC /* TMPassManagerTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPassManagerTC.h; sourceTree = "<group>"; };
 		1971D2261A06BB3D004FE5AC /* TMPassManagerTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPassManagerTC.m; sourceTree = "<group>"; };
 		1971D2271A06BB3D004FE5AC /* TMPassManagerTC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMPassManagerTC.xib; sourceTree = "<group>"; };
@@ -199,6 +204,9 @@
 				192E9E701A11520A00C4ED23 /* TMExpenseTable.xib */,
 				1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */,
 				19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */,
+				196CC6671A152BE1001B561E /* EnterMasterPassword.h */,
+				196CC6681A152BE1001B561E /* EnterMasterPassword.m */,
+				196CC6691A152BE1001B561E /* EnterMasterPassword.xib */,
 				195D02961A08549700B08BDE /* SavePasswordViewController.xib */,
 				1971D2271A06BB3D004FE5AC /* TMPassManagerTC.xib */,
 				192E9E751A11691800C4ED23 /* TMExpenseDetail.xib */,
@@ -372,6 +380,7 @@
 				19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */,
 				192E9E771A11691800C4ED23 /* TMExpenseDetail.xib in Resources */,
 				1971D22D1A06BE5E004FE5AC /* wallet.png in Resources */,
+				196CC66B1A152BE1001B561E /* EnterMasterPassword.xib in Resources */,
 				192E9E721A11520A00C4ED23 /* TMExpenseTable.xib in Resources */,
 				19021B9119F0BE5B000B8EBF /* todo@2x.png in Resources */,
 				19A8139419F89B4000E211AB /* TMToDoListTableViewController.xib in Resources */,
@@ -400,6 +409,7 @@
 			files = (
 				198B0A9E1A11A13B006BFF36 /* Expenses.m in Sources */,
 				198B0A9B1A11A13B006BFF36 /* ExpenseTable.m in Sources */,
+				196CC66A1A152BE1001B561E /* EnterMasterPassword.m in Sources */,
 				1987B4EC19DC67C600197B78 /* TMUITabBarController.m in Sources */,
 				1971D2351A06C884004FE5AC /* Login.m in Sources */,
 				19B6F94C1A01522E00B21960 /* TodoItem.m in Sources */,

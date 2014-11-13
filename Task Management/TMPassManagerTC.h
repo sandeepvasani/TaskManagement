@@ -11,6 +11,7 @@
 #import "Password.h"
 
 @interface TMPassManagerTC : UITableViewController
+
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSFetchedResultsController * fetchedResultsController;
 @end

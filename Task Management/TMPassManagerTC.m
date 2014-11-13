@@ -9,6 +9,7 @@
 #import "TMPassManagerTC.h"
 #import "TMAppDelegate.h"
 #import "SavePasswordViewController.h"
+#import "EnterMasterPassword.h"
 
 
 @implementation TMPassManagerTC
@@ -16,7 +17,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    EnterMasterPassword *myView = [[EnterMasterPassword alloc] initWithNibName:@"EnterMasterPassword" bundle:nil];
+    myView .view.alpha = 1.f;
+     myView.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+   // [myView.view setFrame:[[UIScreen mainScreen] bounds]];
+    myView.view.opaque=YES;
+    [self.navigationController.view addSubview:myView.view];
+   // [self.view addSubview:myView.view];
+   // self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+   // [self presentViewController:myView animated:YES completion:nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd  target:self action:@selector(insertNewObject:)];
@@ -36,6 +45,7 @@
         self.title=@"Logins";
         self.tabBarItem.title=@"Password";
         self.tabBarItem.image=[UIImage imageNamed:@"wallet.png"];
+        
     }
     return self;
 }
