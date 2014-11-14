@@ -44,6 +44,7 @@
 		1987B4ED19DC67C600197B78 /* TMUITabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */; };
 		198B0A9B1A11A13B006BFF36 /* ExpenseTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 198B0A9A1A11A13B006BFF36 /* ExpenseTable.m */; };
 		198B0A9E1A11A13B006BFF36 /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 198B0A9D1A11A13B006BFF36 /* Expenses.m */; };
+		19A6C0D41A155AB200CD66B8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6C0D31A155AB200CD66B8 /* icon.png */; };
 		19A8139319F89B4000E211AB /* TMToDoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */; };
 		19A8139419F89B4000E211AB /* TMToDoListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */; };
 		19B6F94C1A01522E00B21960 /* TodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B6F94B1A01522E00B21960 /* TodoItem.m */; };
@@ -112,6 +113,7 @@
 		198B0A9A1A11A13B006BFF36 /* ExpenseTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseTable.m; sourceTree = "<group>"; };
 		198B0A9C1A11A13B006BFF36 /* Expenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expenses.h; sourceTree = "<group>"; };
 		198B0A9D1A11A13B006BFF36 /* Expenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expenses.m; sourceTree = "<group>"; };
+		19A6C0D31A155AB200CD66B8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		19A8139019F89B4000E211AB /* TMToDoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMToDoListTableViewController.h; sourceTree = "<group>"; };
 		19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMToDoListTableViewController.m; sourceTree = "<group>"; };
 		19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMToDoListTableViewController.xib; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				1971D22A1A06BE13004FE5AC /* file-list-tick-7.png */,
 				1971D22E1A06BFB5004FE5AC /* dollar@2x.png */,
+				19A6C0D31A155AB200CD66B8 /* icon.png */,
 				1971D22C1A06BE5E004FE5AC /* wallet.png */,
 				19021B9019F0BE5B000B8EBF /* todo@2x.png */,
 			);
@@ -386,6 +389,7 @@
 				19A8139419F89B4000E211AB /* TMToDoListTableViewController.xib in Resources */,
 				195D02981A08549700B08BDE /* SavePasswordViewController.xib in Resources */,
 				1971D22B1A06BE13004FE5AC /* file-list-tick-7.png in Resources */,
+				19A6C0D41A155AB200CD66B8 /* icon.png in Resources */,
 				1987B4C119DC664600197B78 /* InfoPlist.strings in Resources */,
 				1987B4CC19DC664600197B78 /* Images.xcassets in Resources */,
 				1987B4ED19DC67C600197B78 /* TMUITabBarController.xib in Resources */,

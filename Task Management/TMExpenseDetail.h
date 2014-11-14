@@ -10,7 +10,8 @@
 #import "ExpenseTable.h"
 #import "Expenses.h"
 
-@interface TMExpenseDetail : UIViewController<UIImagePickerControllerDelegate>
+@interface TMExpenseDetail : UIViewController
+<UIImagePickerControllerDelegate,UITextFieldDelegate>
 - (IBAction)takePhoto:(id)sender;
 - (IBAction)saveBtn:(id)sender;
 @property (retain, nonatomic) IBOutlet UIImageView *imgView;
@@ -20,4 +21,5 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSFetchedResultsController * fetchedResultsController;
 -(id)initWithExpenseDetail:(ExpenseTable *)loginItem andManagedContext:(NSManagedObjectContext *)context ;
+-(NSFetchedResultsController *)fetchedResultsController;
 @end

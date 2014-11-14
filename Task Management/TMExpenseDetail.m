@@ -41,10 +41,36 @@
         amountTextField.text=[NSString stringWithFormat:@"%@",exp.amount];
         
     }
-
+    
+    
+    nameTextbox.delegate = self;
+    
+    UIDatePicker * datePicker = [[UIDatePicker alloc]init];
+    
+    [datePicker setDatePickerMode:UIDatePickerModeDate];
+     [datePicker setDate:[NSDate date]];
+    
+    
+    self.nameTextbox.text = [self formatDate:datePicker.date];
+[datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view from its nib.
 }
+-(void)updateTextField:(id)sender
+{
+    UIDatePicker *picker = (UIDatePicker*)self.nameTextbox.inputView;
+   
+    self.nameTextbox.text = [self formatDate:picker.date];
+}
 
+- (NSString *)formatDate:(NSDate *)date
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateFormat:@"MM'/'dd'/'yyyy"];
+    
+    NSString *formattedDate = [dateFormatter stringFromDate:date];
+    return formattedDate;
+}
 - (void)resetFetchedResultsController
 {
     fetchedResultsController = nil;
@@ -101,7 +127,7 @@
 //	
 //	
 //		picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-	[self showImagePicker:UIImagePickerControllerSourceTypeCamera];
+	[self showImagePicker:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
 //		picker.sourceType = UIImagePickerControllerSourceTypeCamera;
 	
 	
@@ -110,11 +136,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissViewControllerAnimated:YES completion:nil];
 	self.imgView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-//    Expenses  *expObj = (Expenses *)[NSEntityDescription insertNewObjectForEntityForName:@"Expenses" inManagedObjectContext:self.managedObjectContext];
-//    [expObj setValue:UIImagePNGRepresentation(self.imgView.image) forKey:@"img"];
-//    Expenses *exp = [[[self fetchedResultsController] fetchedObjects] firstObject];
-//    if(exp.img!=NULL)
-//        [self.imgView setImage:[UIImage imageWithData:[exp valueForKey:@"img"]]];
+  
     
 }
 
@@ -129,7 +151,8 @@
     if(self.imgView.image!=NULL)
    [expObj setValue:UIImagePNGRepresentation(self.imgView.image) forKey:@"img"];
    expObj.expensetable=self.expenseItem;
-    NSError *error;if(![self.managedObjectContext save:&error])
+    NSError *error;
+    if(![self.managedObjectContext save:&error])
     {
         // Handle the error.
         NSLog(@"errorrooro");
@@ -140,7 +163,7 @@
     }
     [nameTextbox resignFirstResponder];
     [amountTextField resignFirstResponder];
-    
+   
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField

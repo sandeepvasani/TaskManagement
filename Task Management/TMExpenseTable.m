@@ -8,6 +8,7 @@
 
 #import "TMExpenseTable.h"
 #import "TMAppDelegate.h"
+#import "Expenses.h"
 
 
 @implementation TMExpenseTable
@@ -22,11 +23,16 @@
         self.title=@"Expenses";
         self.tabBarItem.title=@"Expense Tracker";
         self.tabBarItem.image=[UIImage imageNamed:@"dollar.png"];
+        
     }
     return self;
 }
 
-
+-(void) viewWillAppear: (BOOL) animated {
+    
+    [self.tableView reloadData];
+   
+}
 
 - (void)viewDidLoad
 {
@@ -125,8 +131,6 @@
 }
 
 
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -157,15 +161,42 @@
     
     cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
 
     
     ExpenseTable *expItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+     cell.textLabel.text = expItem.name;
     
-    cell.textLabel.text = expItem.name;
+  
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Expenses" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"expensetable=%@",expItem];
+    [fetchRequest setPredicate:predicate];
+    NSError *error;
+   NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (objects != nil) {
+        NSUInteger count = [objects count]; // May be 0 if the object has been deleted.
+        if(count>0)
+           // NSString *ab=[[[objects objectAtIndex:0] valueForKey:@"amount"] stringValue];
+       
+      cell.detailTextLabel.text =[NSString stringWithFormat:@"%@%@", @"$ ", [[[objects objectAtIndex:0] valueForKey:@"amount"] stringValue]];
+        
+        
+    }
+    else {
+        // Deal with error.
+    }
+    
+   
+    
     //cell.textLabel.text = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+   
     return cell;
 }
 
@@ -182,18 +213,28 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        NSError *error;
+        if (![context save:&error])
+        {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"ToDo" message:@"Sorry the Item Cannot be deleted" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alertView show];
+            [alertView release];
+        }
+        [self resetFetchedResultsController];
+        [self.tableView reloadData];
+
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
