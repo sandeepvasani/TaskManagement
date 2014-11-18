@@ -28,8 +28,11 @@
 {
     [super viewDidLoad];
   // self.imgView.image= [self loadImage];
-   
-    
+    isFullScreen = false;
+    tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgToFullScreen)];
+    tap.delegate = self;
+    [imgView addGestureRecognizer:tap];
+    [imgView setUserInteractionEnabled:YES];
     if( [[[self fetchedResultsController] fetchedObjects] count]>0)
     {
        
@@ -49,7 +52,7 @@
     
     [datePicker setDatePickerMode:UIDatePickerModeDate];
      [datePicker setDate:[NSDate date]];
-    
+     self.nameTextbox.inputView = datePicker;
     
     self.nameTextbox.text = [self formatDate:datePicker.date];
 [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
@@ -113,7 +116,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch;
+{
+    BOOL shouldReceiveTouch = YES;
+    NSLog(@"fasdfasd");
+    if (gestureRecognizer == tap) {
+        shouldReceiveTouch = (touch.view == imgView);
+    }
+    return shouldReceiveTouch;
+}
 - (void)showImagePicker:(UIImagePickerControllerSourceType)source{
     UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
     imgPicker.sourceType = source;
@@ -121,11 +132,35 @@
     imgPicker.delegate = self;
     [self presentViewController:imgPicker animated:YES completion:nil];
 }
+
+-(void)imgToFullScreen{
+    
+    if (!isFullScreen) {
+        [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+            //save previous frame
+            prevFrame = imgView.frame;
+            [imgView setFrame:[[UIScreen mainScreen] bounds]];
+        }completion:^(BOOL finished){
+            isFullScreen = true;
+        }];
+       
+        return;
+    } else {
+        [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+            [imgView setFrame:prevFrame];
+        }completion:^(BOOL finished){
+            isFullScreen = false;
+        }];
+        return;
+    }
+}
+
 - (IBAction)takePhoto:(id)sender {
 //    UIImagePickerController * picker = [[UIImagePickerController alloc] init];
 //	picker.delegate = self;
 //	
-//	
+	[nameTextbox resignFirstResponder];
+    [amountTextField resignFirstResponder];
 //		picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
 	[self showImagePicker:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
 //		picker.sourceType = UIImagePickerControllerSourceTypeCamera;

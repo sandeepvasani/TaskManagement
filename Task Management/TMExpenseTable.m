@@ -29,7 +29,7 @@
 }
 
 -(void) viewWillAppear: (BOOL) animated {
-    
+    [self resetFetchedResultsController];
     [self.tableView reloadData];
    
 }
