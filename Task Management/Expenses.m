@@ -2,7 +2,7 @@
 //  Expenses.m
 //  Task Management
 //
-//  Created by  on 11/10/14.
+//  Created by  on 11/21/14.
 //  Copyright (c) 2014 CSCI 5737.01. All rights reserved.
 //
 
@@ -12,9 +12,9 @@
 
 @implementation Expenses
 
-@dynamic name;
 @dynamic amount;
 @dynamic img;
+@dynamic name;
 @dynamic expensetable;
 
 @end

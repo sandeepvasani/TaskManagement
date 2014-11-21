@@ -10,6 +10,7 @@
 		19021B8D19F0AF3A000B8EBF /* TMToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */; };
 		19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */; };
 		19021B9119F0BE5B000B8EBF /* todo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19021B9019F0BE5B000B8EBF /* todo@2x.png */; };
+		190A0D7E1A1FE3C800E6C5FB /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A0D7D1A1FE3C800E6C5FB /* Expenses.m */; };
 		192E9E711A11520A00C4ED23 /* TMExpenseTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 192E9E6F1A11520A00C4ED23 /* TMExpenseTable.m */; };
 		192E9E721A11520A00C4ED23 /* TMExpenseTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192E9E701A11520A00C4ED23 /* TMExpenseTable.xib */; };
 		192E9E761A11691800C4ED23 /* TMExpenseDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 192E9E741A11691800C4ED23 /* TMExpenseDetail.m */; };
@@ -43,7 +44,6 @@
 		1987B4EC19DC67C600197B78 /* TMUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1987B4EA19DC67C600197B78 /* TMUITabBarController.m */; };
 		1987B4ED19DC67C600197B78 /* TMUITabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */; };
 		198B0A9B1A11A13B006BFF36 /* ExpenseTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 198B0A9A1A11A13B006BFF36 /* ExpenseTable.m */; };
-		198B0A9E1A11A13B006BFF36 /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 198B0A9D1A11A13B006BFF36 /* Expenses.m */; };
 		19A6C0D41A155AB200CD66B8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6C0D31A155AB200CD66B8 /* icon.png */; };
 		19A8139319F89B4000E211AB /* TMToDoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */; };
 		19A8139419F89B4000E211AB /* TMToDoListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */; };
@@ -66,6 +66,8 @@
 		19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMToDoTableViewController.m; sourceTree = "<group>"; };
 		19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMToDoTableViewController.xib; sourceTree = "<group>"; };
 		19021B9019F0BE5B000B8EBF /* todo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo@2x.png"; sourceTree = "<group>"; };
+		190A0D7C1A1FE3C800E6C5FB /* Expenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expenses.h; sourceTree = "<group>"; };
+		190A0D7D1A1FE3C800E6C5FB /* Expenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expenses.m; sourceTree = "<group>"; };
 		192E9E6E1A11520A00C4ED23 /* TMExpenseTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMExpenseTable.h; sourceTree = "<group>"; };
 		192E9E6F1A11520A00C4ED23 /* TMExpenseTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMExpenseTable.m; sourceTree = "<group>"; };
 		192E9E701A11520A00C4ED23 /* TMExpenseTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMExpenseTable.xib; sourceTree = "<group>"; };
@@ -111,8 +113,6 @@
 		1987B4EB19DC67C600197B78 /* TMUITabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMUITabBarController.xib; sourceTree = "<group>"; };
 		198B0A991A11A13B006BFF36 /* ExpenseTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseTable.h; sourceTree = "<group>"; };
 		198B0A9A1A11A13B006BFF36 /* ExpenseTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseTable.m; sourceTree = "<group>"; };
-		198B0A9C1A11A13B006BFF36 /* Expenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expenses.h; sourceTree = "<group>"; };
-		198B0A9D1A11A13B006BFF36 /* Expenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expenses.m; sourceTree = "<group>"; };
 		19A6C0D31A155AB200CD66B8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		19A8139019F89B4000E211AB /* TMToDoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMToDoListTableViewController.h; sourceTree = "<group>"; };
 		19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMToDoListTableViewController.m; sourceTree = "<group>"; };
@@ -183,8 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				1987B4C819DC664600197B78 /* Task_Management.xcdatamodeld */,
-				198B0A9C1A11A13B006BFF36 /* Expenses.h */,
-				198B0A9D1A11A13B006BFF36 /* Expenses.m */,
+				190A0D7C1A1FE3C800E6C5FB /* Expenses.h */,
+				190A0D7D1A1FE3C800E6C5FB /* Expenses.m */,
 				198B0A991A11A13B006BFF36 /* ExpenseTable.h */,
 				198B0A9A1A11A13B006BFF36 /* ExpenseTable.m */,
 				1971D2331A06C884004FE5AC /* Login.h */,
@@ -411,10 +411,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				198B0A9E1A11A13B006BFF36 /* Expenses.m in Sources */,
 				198B0A9B1A11A13B006BFF36 /* ExpenseTable.m in Sources */,
 				196CC66A1A152BE1001B561E /* EnterMasterPassword.m in Sources */,
 				1987B4EC19DC67C600197B78 /* TMUITabBarController.m in Sources */,
+				190A0D7E1A1FE3C800E6C5FB /* Expenses.m in Sources */,
 				1971D2351A06C884004FE5AC /* Login.m in Sources */,
 				19B6F94C1A01522E00B21960 /* TodoItem.m in Sources */,
 				1987B4C319DC664600197B78 /* main.m in Sources */,

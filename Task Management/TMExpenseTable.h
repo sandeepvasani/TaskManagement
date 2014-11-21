@@ -11,7 +11,10 @@
 #import "ExpenseTable.h"
 
 @interface TMExpenseTable : UITableViewController
-@property (strong, nonatomic) IBOutlet UIView *bottomFloatingView;
+{
+    float sum;
+
+}
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSFetchedResultsController * fetchedResultsController;
 @end

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Expenses" representedClassName="Expenses" syncable="YES">
-        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="img" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="expensetable" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExpenseTable" inverseName="expenses" inverseEntity="ExpenseTable" syncable="YES"/>
+        <relationship name="expensetable" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ExpenseTable" inverseName="expenses" inverseEntity="ExpenseTable" syncable="YES"/>
     </entity>
     <entity name="ExpenseTable" representedClassName="ExpenseTable" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="expenses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expenses" inverseName="expensetable" inverseEntity="Expenses" syncable="YES"/>
+        <relationship name="expenses" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Expenses" inverseName="expensetable" inverseEntity="Expenses" syncable="YES"/>
     </entity>
     <entity name="Login" representedClassName="Login" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -33,11 +33,11 @@
         <relationship name="todolink" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Todo" inverseName="todoitemlink" inverseEntity="Todo" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Expenses" positionX="-306" positionY="-4" width="128" height="103"/>
+        <element name="ExpenseTable" positionX="-227" positionY="-180" width="128" height="88"/>
         <element name="Login" positionX="-486" positionY="-106" width="128" height="88"/>
         <element name="Password" positionX="-306" positionY="-288" width="128" height="88"/>
         <element name="Todo" positionX="-54" positionY="-9" width="128" height="103"/>
         <element name="TodoItem" positionX="-63" positionY="-268" width="128" height="88"/>
-        <element name="ExpenseTable" positionX="-261" positionY="-117" width="128" height="88"/>
-        <element name="Expenses" positionX="-252" positionY="-108" width="128" height="103"/>
     </elements>
 </model>

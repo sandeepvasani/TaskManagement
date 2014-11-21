@@ -181,11 +181,12 @@
         return;
     Expenses  *expObj = (Expenses *)[NSEntityDescription insertNewObjectForEntityForName:@"Expenses" inManagedObjectContext:self.managedObjectContext];
     [expObj setName:self.nameTextbox.text];
-    [expObj setAmount:[ NSNumber numberWithInteger:[self.amountTextField.text integerValue ]]];
+    [expObj setAmount:[ NSNumber numberWithFloat:[self.amountTextField.text floatValue ]]];
     //[expobj]
     if(self.imgView.image!=NULL)
    [expObj setValue:UIImagePNGRepresentation(self.imgView.image) forKey:@"img"];
    expObj.expensetable=self.expenseItem;
+    self.expenseItem=expObj.expensetable;
     NSError *error;
     if(![self.managedObjectContext save:&error])
     {
