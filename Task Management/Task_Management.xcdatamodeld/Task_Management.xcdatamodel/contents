@@ -33,7 +33,7 @@
         <relationship name="todolink" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Todo" inverseName="todoitemlink" inverseEntity="Todo" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Expenses" positionX="-306" positionY="-4" width="128" height="103"/>
+        <element name="Expenses" positionX="-308" positionY="108" width="128" height="103"/>
         <element name="ExpenseTable" positionX="-227" positionY="-180" width="128" height="88"/>
         <element name="Login" positionX="-486" positionY="-106" width="128" height="88"/>
         <element name="Password" positionX="-306" positionY="-288" width="128" height="88"/>

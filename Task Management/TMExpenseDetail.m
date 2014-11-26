@@ -196,7 +196,7 @@
             else
             {
                 UIAlertView *altnot=[[UIAlertView alloc]initWithTitle:@"Camera Not Available" message:@"Camera Not Available" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                altnot.tag=103;
+              
                 [altnot show];
                 [altnot release];
                 
@@ -231,6 +231,35 @@
 - (IBAction)saveBtn:(id)sender {
     if(self.nameTextbox.text==NULL|| self.amountTextField.text==NULL )
         return;
+    
+    
+    if( [[[self fetchedResultsController] fetchedObjects] count]>0)
+    {
+        
+        Expenses *exp = [[[self fetchedResultsController] fetchedObjects] firstObject];
+        [exp setName:self.nameTextbox.text];
+        [exp setAmount:[ NSNumber numberWithFloat:[self.amountTextField.text floatValue ]]];
+        //[expobj]
+        if(self.imgView.image!=NULL)
+            [exp setValue:UIImagePNGRepresentation(self.imgView.image) forKey:@"img"];
+        exp.expensetable=self.expenseItem;
+        self.expenseItem=exp.expensetable;
+        NSError *error;
+        if(![self.managedObjectContext save:&error])
+        {
+            // Handle the error.
+            NSLog(@"errorrooro");
+        }
+        else
+        {
+            // Successfully added the record.
+        }
+        
+    }
+    
+    
+    else{
+    
     Expenses  *expObj = (Expenses *)[NSEntityDescription insertNewObjectForEntityForName:@"Expenses" inManagedObjectContext:self.managedObjectContext];
     [expObj setName:self.nameTextbox.text];
     [expObj setAmount:[ NSNumber numberWithFloat:[self.amountTextField.text floatValue ]]];
@@ -251,8 +280,27 @@
     }
     [nameTextbox resignFirstResponder];
     [amountTextField resignFirstResponder];
+    
+    }
+    
+    
+    UIAlertView *altnot=[[UIAlertView alloc]initWithTitle:@"SAVED" message:@"SAVED" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [altnot show];
+    [altnot release];
    
 }
+
+
+- (void)alertView:(UIAlertView *)alert didDismissWithButtonIndex:(NSInteger)buttonIndex {
+  
+        
+          [[self navigationController] popViewControllerAnimated:YES];
+            
+    
+   
+}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField
 {

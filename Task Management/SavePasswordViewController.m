@@ -109,8 +109,22 @@
     }
      [savePassword resignFirstResponder];
     [saveUsername resignFirstResponder];
+    UIAlertView *altnot=[[UIAlertView alloc]initWithTitle:@"SAVED" message:@"SAVED" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [altnot show];
+    [altnot release];
+    
 }
 
+
+- (void)alertView:(UIAlertView *)alert didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+    
+    [[self navigationController] popViewControllerAnimated:YES];
+    
+    
+    
+}
 
 
 
