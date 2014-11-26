@@ -158,16 +158,68 @@
 - (IBAction)takePhoto:(id)sender {
 //    UIImagePickerController * picker = [[UIImagePickerController alloc] init];
 //	picker.delegate = self;
-//	
+//
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: nil
+                                                             delegate: self
+                                                    cancelButtonTitle: @"Cancel"
+                                               destructiveButtonTitle: nil
+                                                    otherButtonTitles: @"Take a new photo",
+                                  @"Choose from existing", nil];
+    [actionSheet showInView:self.view];
+    
+    
 	[nameTextbox resignFirstResponder];
     [amountTextField resignFirstResponder];
 //		picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-	[self showImagePicker:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+	
 //		picker.sourceType = UIImagePickerControllerSourceTypeCamera;
 	
 	
 	//[self presentViewController:picker animated:YES completion:nil];
 }
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    int i = buttonIndex;
+    
+    switch(i) {
+            
+        case 0:
+        {
+            
+            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+            {
+                [self showImagePicker:UIImagePickerControllerSourceTypeCamera];
+            }
+            else
+            {
+                UIAlertView *altnot=[[UIAlertView alloc]initWithTitle:@"Camera Not Available" message:@"Camera Not Available" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                altnot.tag=103;
+                [altnot show];
+                [altnot release];
+                
+            }
+            
+            //Code for camera
+            
+        }
+            break;
+        case 1:
+        {
+            [self showImagePicker:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+        }
+            
+        default:
+            // Do Nothing.........
+            break;
+            
+    }
+}
+
+
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissViewControllerAnimated:YES completion:nil];
 	self.imgView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
