@@ -10,6 +10,7 @@
 #import "TodoItem.h"
 #import "TMAppDelegate.h"
 #import "TMToDoListTableViewController.h"
+#import "TMAddtodo.h"
 
 
 @implementation TMToDoTableViewController
@@ -46,13 +47,18 @@
 }
 
 - (IBAction)insertNewObject: (id)sender {
-    UIAlertView* alert= [[UIAlertView alloc] initWithTitle:@"New To-Do List"
-                                                   message:@"Title for new list:"
-                                                  delegate:self
-                                         cancelButtonTitle:@"Cancel"
-                                         otherButtonTitles:@"Create", nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
+//    UIAlertView* alert= [[UIAlertView alloc] initWithTitle:@"New To-Do List"
+//                                                   message:@"Title for new list:"
+//                                                  delegate:self
+//                                         cancelButtonTitle:@"Cancel"
+//                                         otherButtonTitles:@"Create", nil];
+//    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+//    [alert show];
+    
+     TMAddtodo *addTitleVC = [[TMAddtodo alloc] initWithNibName:@"TMAddtodo" bundle:nil];
+    
+    UINavigationController *addTitleNC = [[UINavigationController alloc] initWithRootViewController:addTitleVC];
+    [self presentViewController:addTitleNC animated:YES completion:nil];
 }
 
 

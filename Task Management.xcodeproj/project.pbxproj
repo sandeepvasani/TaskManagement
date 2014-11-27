@@ -10,6 +10,8 @@
 		19021B8D19F0AF3A000B8EBF /* TMToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */; };
 		19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */; };
 		19021B9119F0BE5B000B8EBF /* todo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19021B9019F0BE5B000B8EBF /* todo@2x.png */; };
+		1909A3831A268DAB00718BAC /* TMAddtodo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1909A3811A268DAB00718BAC /* TMAddtodo.m */; };
+		1909A3841A268DAB00718BAC /* TMAddtodo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1909A3821A268DAB00718BAC /* TMAddtodo.xib */; };
 		190A0D7E1A1FE3C800E6C5FB /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A0D7D1A1FE3C800E6C5FB /* Expenses.m */; };
 		192E9E711A11520A00C4ED23 /* TMExpenseTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 192E9E6F1A11520A00C4ED23 /* TMExpenseTable.m */; };
 		192E9E721A11520A00C4ED23 /* TMExpenseTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192E9E701A11520A00C4ED23 /* TMExpenseTable.xib */; };
@@ -66,6 +68,9 @@
 		19021B8B19F0AF3A000B8EBF /* TMToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMToDoTableViewController.m; sourceTree = "<group>"; };
 		19021B8C19F0AF3A000B8EBF /* TMToDoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMToDoTableViewController.xib; sourceTree = "<group>"; };
 		19021B9019F0BE5B000B8EBF /* todo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo@2x.png"; sourceTree = "<group>"; };
+		1909A3801A268DAB00718BAC /* TMAddtodo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMAddtodo.h; sourceTree = "<group>"; };
+		1909A3811A268DAB00718BAC /* TMAddtodo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMAddtodo.m; sourceTree = "<group>"; };
+		1909A3821A268DAB00718BAC /* TMAddtodo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMAddtodo.xib; sourceTree = "<group>"; };
 		190A0D7C1A1FE3C800E6C5FB /* Expenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expenses.h; sourceTree = "<group>"; };
 		190A0D7D1A1FE3C800E6C5FB /* Expenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expenses.m; sourceTree = "<group>"; };
 		192E9E6E1A11520A00C4ED23 /* TMExpenseTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMExpenseTable.h; sourceTree = "<group>"; };
@@ -166,6 +171,9 @@
 				1971D2261A06BB3D004FE5AC /* TMPassManagerTC.m */,
 				195D02941A08549700B08BDE /* SavePasswordViewController.h */,
 				195D02951A08549700B08BDE /* SavePasswordViewController.m */,
+				1909A3801A268DAB00718BAC /* TMAddtodo.h */,
+				1909A3811A268DAB00718BAC /* TMAddtodo.m */,
+				1909A3821A268DAB00718BAC /* TMAddtodo.xib */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -392,6 +400,7 @@
 				19A6C0D41A155AB200CD66B8 /* icon.png in Resources */,
 				1987B4C119DC664600197B78 /* InfoPlist.strings in Resources */,
 				1987B4CC19DC664600197B78 /* Images.xcassets in Resources */,
+				1909A3841A268DAB00718BAC /* TMAddtodo.xib in Resources */,
 				1987B4ED19DC67C600197B78 /* TMUITabBarController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +426,7 @@
 				190A0D7E1A1FE3C800E6C5FB /* Expenses.m in Sources */,
 				1971D2351A06C884004FE5AC /* Login.m in Sources */,
 				19B6F94C1A01522E00B21960 /* TodoItem.m in Sources */,
+				1909A3831A268DAB00718BAC /* TMAddtodo.m in Sources */,
 				1987B4C319DC664600197B78 /* main.m in Sources */,
 				195D02971A08549700B08BDE /* SavePasswordViewController.m in Sources */,
 				192E9E711A11520A00C4ED23 /* TMExpenseTable.m in Sources */,
