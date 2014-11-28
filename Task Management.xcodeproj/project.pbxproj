@@ -49,8 +49,9 @@
 		19A6C0D41A155AB200CD66B8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6C0D31A155AB200CD66B8 /* icon.png */; };
 		19A8139319F89B4000E211AB /* TMToDoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */; };
 		19A8139419F89B4000E211AB /* TMToDoListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */; };
-		19B6F94C1A01522E00B21960 /* TodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B6F94B1A01522E00B21960 /* TodoItem.m */; };
 		19B6F94F1A01522E00B21960 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B6F94E1A01522E00B21960 /* Todo.m */; };
+		19B848041A291A800001CB4E /* TodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B848031A291A800001CB4E /* TodoItem.m */; };
+		19E4A98A1A290C13008CB4CB /* alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 19E4A9891A290C13008CB4CB /* alarm.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,10 +123,12 @@
 		19A8139019F89B4000E211AB /* TMToDoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMToDoListTableViewController.h; sourceTree = "<group>"; };
 		19A8139119F89B4000E211AB /* TMToDoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMToDoListTableViewController.m; sourceTree = "<group>"; };
 		19A8139219F89B4000E211AB /* TMToDoListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMToDoListTableViewController.xib; sourceTree = "<group>"; };
-		19B6F94A1A01522E00B21960 /* TodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoItem.h; sourceTree = "<group>"; };
-		19B6F94B1A01522E00B21960 /* TodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoItem.m; sourceTree = "<group>"; };
 		19B6F94D1A01522E00B21960 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
 		19B6F94E1A01522E00B21960 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		19B848021A291A800001CB4E /* TodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoItem.h; sourceTree = "<group>"; };
+		19B848031A291A800001CB4E /* TodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoItem.m; sourceTree = "<group>"; };
+		19B848051A291CD00001CB4E /* Task_Management 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Task_Management 2.xcdatamodel"; sourceTree = "<group>"; };
+		19E4A9891A290C13008CB4CB /* alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,8 +204,8 @@
 				1971D2311A06C884004FE5AC /* Password.m */,
 				19B6F94D1A01522E00B21960 /* Todo.h */,
 				19B6F94E1A01522E00B21960 /* Todo.m */,
-				19B6F94A1A01522E00B21960 /* TodoItem.h */,
-				19B6F94B1A01522E00B21960 /* TodoItem.m */,
+				19B848021A291A800001CB4E /* TodoItem.h */,
+				19B848031A291A800001CB4E /* TodoItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 		19021B8F19F0BE45000B8EBF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				19E4A9891A290C13008CB4CB /* alarm.wav */,
 				1971D22A1A06BE13004FE5AC /* file-list-tick-7.png */,
 				1971D22E1A06BFB5004FE5AC /* dollar@2x.png */,
 				19A6C0D31A155AB200CD66B8 /* icon.png */,
@@ -390,6 +394,7 @@
 				1971D22F1A06BFB5004FE5AC /* dollar@2x.png in Resources */,
 				19021B8E19F0AF3A000B8EBF /* TMToDoTableViewController.xib in Resources */,
 				192E9E771A11691800C4ED23 /* TMExpenseDetail.xib in Resources */,
+				19E4A98A1A290C13008CB4CB /* alarm.wav in Resources */,
 				1971D22D1A06BE5E004FE5AC /* wallet.png in Resources */,
 				196CC66B1A152BE1001B561E /* EnterMasterPassword.xib in Resources */,
 				192E9E721A11520A00C4ED23 /* TMExpenseTable.xib in Resources */,
@@ -425,7 +430,6 @@
 				1987B4EC19DC67C600197B78 /* TMUITabBarController.m in Sources */,
 				190A0D7E1A1FE3C800E6C5FB /* Expenses.m in Sources */,
 				1971D2351A06C884004FE5AC /* Login.m in Sources */,
-				19B6F94C1A01522E00B21960 /* TodoItem.m in Sources */,
 				1909A3831A268DAB00718BAC /* TMAddtodo.m in Sources */,
 				1987B4C319DC664600197B78 /* main.m in Sources */,
 				195D02971A08549700B08BDE /* SavePasswordViewController.m in Sources */,
@@ -437,6 +441,7 @@
 				1971D2281A06BB3D004FE5AC /* TMPassManagerTC.m in Sources */,
 				1987B4CA19DC664600197B78 /* Task_Management.xcdatamodeld in Sources */,
 				1971D2321A06C884004FE5AC /* Password.m in Sources */,
+				19B848041A291A800001CB4E /* TodoItem.m in Sources */,
 				19B6F94F1A01522E00B21960 /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,6 +668,7 @@
 		1987B4C819DC664600197B78 /* Task_Management.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				19B848051A291CD00001CB4E /* Task_Management 2.xcdatamodel */,
 				1987B4C919DC664600197B78 /* Task_Management.xcdatamodel */,
 			);
 			currentVersion = 1987B4C919DC664600197B78 /* Task_Management.xcdatamodel */;

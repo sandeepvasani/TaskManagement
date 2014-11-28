@@ -2,7 +2,7 @@
 //  TodoItem.h
 //  Task Management
 //
-//  Created by  on 10/29/14.
+//  Created by  on 11/28/14.
 //  Copyright (c) 2014 CSCI 5737.01. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface TodoItem : NSManagedObject
 
-@property (nonatomic, retain) NSDate * creationDate;
+@property (nonatomic, retain) NSDate * dueDate;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *todolink;
 @end

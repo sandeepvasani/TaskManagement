@@ -45,7 +45,11 @@
     self.managedObjectContext=appDelegate.managedObjectContext;
     
 }
-
+-(void) viewWillAppear: (BOOL) animated {
+    [self resetFetchedResultsController];
+    [self.tableView reloadData];
+    
+}
 - (IBAction)insertNewObject: (id)sender {
 //    UIAlertView* alert= [[UIAlertView alloc] initWithTitle:@"New To-Do List"
 //                                                   message:@"Title for new list:"
@@ -110,7 +114,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"TodoItem" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
@@ -167,19 +171,29 @@
     
     cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     // Configure the cell... setting the text of our cell's label
     
    TodoItem *toDoItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     
     cell.textLabel.text = toDoItem.name;
+    if(!([[self formatDate:toDoItem.dueDate] isEqualToString:@"Sat, 12/12/99, 0:0 PM"]))
+    cell.detailTextLabel.text=[self formatDate:toDoItem.dueDate];
     //cell.textLabel.text = [[self fetchedResultsController] objectAtIndexPath:indexPath];
      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
-
+- (NSString *)formatDate:(NSDate *)date
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateFormat:@"ccc, MM/dd/yy, K:m a"];
+    
+    NSString *formattedDate = [dateFormatter stringFromDate:date];
+    return formattedDate;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -194,6 +208,30 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        
+        
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        
+        UIApplication *app = [UIApplication sharedApplication];
+        NSArray *eventArray = [app scheduledLocalNotifications];
+        for (int i=0; i<[eventArray count]; i++)
+        {
+            UILocalNotification* oneEvent = [eventArray objectAtIndex:i];
+            NSDictionary *userInfoCurrent = oneEvent.userInfo;
+            NSString *uid=[NSString stringWithFormat:@"%@",[userInfoCurrent valueForKey:@"title"]];
+            if ([uid isEqualToString:cell.textLabel.text])
+            {
+                //Cancelling local notification
+                [app cancelLocalNotification:oneEvent];
+                NSLog(@"cancelling notification");
+                break;
+            }
+        }
+
+        
+        
         // Delete the row from the data source
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
@@ -206,6 +244,8 @@
         }
         [self resetFetchedResultsController];
         [self.tableView reloadData];
+        
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   

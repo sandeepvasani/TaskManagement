@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TMAddtodo : UIViewController
+@interface TMAddtodo : UIViewController<UITextFieldDelegate>
 @property (retain, nonatomic) IBOutlet UITextField *addTitleTextBox;
+@property (retain, nonatomic) UIDatePicker * datePicker;
 - (IBAction)toggleBtn:(id)sender;
 @property (retain, nonatomic) IBOutlet UITextField *timeTextbox;
-
+@property (nonatomic, retain) IBOutlet UISwitch *swt;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end

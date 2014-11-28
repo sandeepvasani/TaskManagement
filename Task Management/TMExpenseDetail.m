@@ -296,8 +296,6 @@
   
         
           [[self navigationController] popViewControllerAnimated:YES];
-            
-    
    
 }
 

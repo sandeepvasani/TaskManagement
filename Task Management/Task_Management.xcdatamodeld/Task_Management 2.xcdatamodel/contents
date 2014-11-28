@@ -28,7 +28,7 @@
         <relationship name="todoitemlink" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TodoItem" inverseName="todolink" inverseEntity="TodoItem" syncable="YES"/>
     </entity>
     <entity name="TodoItem" representedClassName="TodoItem" syncable="YES">
-        <attribute name="dueDate" attributeType="Date" defaultDateTimeInterval="3122474400" defaultValueString="2099-12-12 12:00:00 -0600" syncable="YES"/>
+        <attribute name="dueDate" attributeType="Date" defaultDateTimeInterval="-33285600" defaultValueString="12/12/99" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="todolink" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Todo" inverseName="todoitemlink" inverseEntity="Todo" syncable="YES"/>
     </entity>
