@@ -17,33 +17,48 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YFb-mX-QOL">
-                    <rect key="frame" x="-6" y="98" width="333" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YFb-mX-QOL">
+                    <rect key="frame" x="-6" y="73" width="333" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reminder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UA-eI-emo">
-                    <rect key="frame" x="53" y="162" width="86" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UA-eI-emo">
+                    <rect key="frame" x="13" y="132" width="86" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="86" id="S6z-Wi-srO"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Ro-1M-xEA">
-                    <rect key="frame" x="207" y="152" width="51" height="31"/>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Ro-1M-xEA">
+                    <rect key="frame" x="207" y="127" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
                         <action selector="toggleBtn:" destination="-1" eventType="valueChanged" id="a0H-FZ-iFj"/>
                     </connections>
                 </switch>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hAe-gu-OuX">
-                    <rect key="frame" x="0.0" y="198" width="320" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hAe-gu-OuX">
+                    <rect key="frame" x="-6" y="173" width="333" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3UA-eI-emo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="7Ko-Va-y0H"/>
+                <constraint firstItem="3UA-eI-emo" firstAttribute="centerY" secondItem="8Ro-1M-xEA" secondAttribute="centerY" id="BM8-Z6-QGh"/>
+                <constraint firstItem="hAe-gu-OuX" firstAttribute="leading" secondItem="YFb-mX-QOL" secondAttribute="leading" id="GiV-j8-dW2"/>
+                <constraint firstItem="YFb-mX-QOL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-6" id="MEN-lD-8J7"/>
+                <constraint firstItem="hAe-gu-OuX" firstAttribute="top" secondItem="8Ro-1M-xEA" secondAttribute="bottom" constant="15" id="QOw-T4-G2z"/>
+                <constraint firstItem="8Ro-1M-xEA" firstAttribute="top" secondItem="YFb-mX-QOL" secondAttribute="bottom" constant="24" id="TZA-40-GHs"/>
+                <constraint firstItem="hAe-gu-OuX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UsJ-ep-dd9"/>
+                <constraint firstAttribute="trailing" secondItem="8Ro-1M-xEA" secondAttribute="trailing" constant="64" id="Ver-Tb-CfX"/>
+                <constraint firstItem="hAe-gu-OuX" firstAttribute="trailing" secondItem="YFb-mX-QOL" secondAttribute="trailing" id="WMn-y5-CUh"/>
+                <constraint firstItem="YFb-mX-QOL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="73" id="qEl-Pv-1yi"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

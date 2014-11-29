@@ -73,7 +73,7 @@
     if(self.addTitleTextBox.text.length == 0)
     {
         UIAlertView *altnot=[[UIAlertView alloc]initWithTitle:@"Add title" message:@"Title cannot be empty" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        
+         [altnot setTag:11];
         [altnot show];
         [altnot release];
         [timeTextbox resignFirstResponder];
@@ -99,22 +99,24 @@
         {
             // Successfully added the record.
         }
+        
+        UIAlertView *altnot=[[UIAlertView alloc]initWithTitle:@"SAVED" message:@"SAVED" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [altnot setTag:12];
+        [altnot show];
+        [altnot release];
     }
     
     [timeTextbox resignFirstResponder];
     [addTitleTextBox resignFirstResponder];
     
-    UIAlertView *altnot=[[UIAlertView alloc]initWithTitle:@"SAVED" message:@"SAVED" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     
-    [altnot show];
-    [altnot release];
     
 }
 
 
 - (void)alertView:(UIAlertView *)alert didDismissWithButtonIndex:(NSInteger)buttonIndex {
     
-    
+    if([alert tag] == 12)
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

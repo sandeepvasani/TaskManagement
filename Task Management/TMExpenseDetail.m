@@ -222,7 +222,13 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissViewControllerAnimated:YES completion:nil];
-	self.imgView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    UIImage *sourceImage = [info valueForKey:UIImagePickerControllerOriginalImage];
+    
+    NSData *data = UIImagePNGRepresentation(sourceImage);
+    UIImage *tmp = [UIImage imageWithData:data];
+	self.imgView.image = [UIImage imageWithCGImage:tmp.CGImage
+                                             scale:sourceImage.scale
+                                       orientation:sourceImage.imageOrientation];
   
     
 }
