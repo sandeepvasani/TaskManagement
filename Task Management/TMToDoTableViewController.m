@@ -43,6 +43,9 @@
     
     TMAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     self.managedObjectContext=appDelegate.managedObjectContext;
+    self.tableView.delegate = self;
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.tableView.backgroundColor = [UIColor blackColor];
     
 }
 -(void) viewWillAppear: (BOOL) animated {
@@ -66,38 +69,51 @@
 }
 
 
-- (void)alertView:(UIAlertView *)alert didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex > 0) {
-        NSString* title = [alert textFieldAtIndex: 0].text;
-        if (title.length > 0) {
-           
-              //[self.toDoItem addObject:title];
-            [self addTodoItem:title];
-            //self.toDoItem.completed = NO;
-            [self resetFetchedResultsController];
-            [self.tableView reloadData];
-          
-            
-        }
-    }
+//- (void)alertView:(UIAlertView *)alert didDismissWithButtonIndex:(NSInteger)buttonIndex {
+//    if (buttonIndex > 0) {
+//        NSString* title = [alert textFieldAtIndex: 0].text;
+//        if (title.length > 0) {
+//           
+//              //[self.toDoItem addObject:title];
+//            [self addTodoItem:title];
+//            //self.toDoItem.completed = NO;
+//            [self resetFetchedResultsController];
+//            [self.tableView reloadData];
+//          
+//            
+//        }
+//    }
+//}
+//
+//-(void)addTodoItem:(NSString *)name
+//{
+//    TodoItem *todoitemObj = (TodoItem *)[NSEntityDescription insertNewObjectForEntityForName:@"TodoItem" inManagedObjectContext:managedObjectContext];
+//    [todoitemObj setName:name];
+//    
+//    NSError *error;if(![managedObjectContext save:&error])
+//    {
+//        // Handle the error.
+//    }
+//    else
+//    {
+//        // Successfully added the record.
+//    }
+//}
+
+-(UIColor*)colorForIndex:(NSInteger) index {
+    NSUInteger itemCount = [[[self fetchedResultsController] fetchedObjects] count];
+    float val = ((float)index / (float)itemCount) * 1.0;
+    return [UIColor colorWithRed: 1.0 green:val blue: 0.0 alpha:1.0];
 }
 
--(void)addTodoItem:(NSString *)name
-{
-    TodoItem *todoitemObj = (TodoItem *)[NSEntityDescription insertNewObjectForEntityForName:@"TodoItem" inManagedObjectContext:managedObjectContext];
-    [todoitemObj setName:name];
-    
-    NSError *error;if(![managedObjectContext save:&error])
-    {
-        // Handle the error.
-    }
-    else
-    {
-        // Successfully added the record.
-    }
+#pragma mark - UITableViewDataDelegate protocol methods
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50.0f;
 }
 
-
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.backgroundColor = [self colorForIndex:indexPath.row];
+}
 
 - (void)resetFetchedResultsController
 {
@@ -178,10 +194,11 @@
    TodoItem *toDoItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     
     cell.textLabel.text = toDoItem.name;
-    if(!([[self formatDate:toDoItem.dueDate] isEqualToString:@"Sat, 12/12/99, 0:0 PM"]))
+    if(!([[self formatDate:toDoItem.dueDate] isEqualToString:@"Sat, 12/12/99, 00:00 PM"]))
     cell.detailTextLabel.text=[self formatDate:toDoItem.dueDate];
     //cell.textLabel.text = [[self fetchedResultsController] objectAtIndexPath:indexPath];
      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+   
     return cell;
 }
 
@@ -189,7 +206,7 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateFormat:@"ccc, MM/dd/yy, K:m a"];
+    [dateFormatter setDateFormat:@"ccc, MM/dd/yy, KK:mm a"];
     
     NSString *formattedDate = [dateFormatter stringFromDate:date];
     return formattedDate;

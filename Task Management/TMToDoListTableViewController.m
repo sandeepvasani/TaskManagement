@@ -188,11 +188,21 @@
     Todo *toDo = [[self fetchedResultsController] objectAtIndexPath:indexPath];
       //Todo *toDo = [self.todoItem.todolink.allObjects objectAtIndex:indexPath.row];
    
-    cell.textLabel.text = toDo.name;
+   // cell.textLabel.text = toDo.name;
     //cell.textLabel.text = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     if ([toDo.completed boolValue]) {
+       // cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        NSDictionary* attributes = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInt:NSUnderlineStyleThick]};
+        NSAttributedString* attributedString = [[NSAttributedString alloc] initWithString:toDo.name attributes:attributes];
+        
+        cell.textLabel.attributedText = attributedString;
+        
     } else {
+        //cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.textLabel.text = toDo.name;
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
 

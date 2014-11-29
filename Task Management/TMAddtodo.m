@@ -85,6 +85,12 @@
         TodoItem *todoitemObj = (TodoItem *)[NSEntityDescription insertNewObjectForEntityForName:@"TodoItem" inManagedObjectContext:managedObjectContext];
         [todoitemObj setName:self.addTitleTextBox.text];
         
+       
+        if(swt.on==TRUE){
+            [self scheduleNotificationForDate: datePicker.date];
+            [todoitemObj setDueDate:datePicker.date];
+        }
+        
         NSError *error;if(![managedObjectContext save:&error])
         {
             // Handle the error.
@@ -92,11 +98,6 @@
         else
         {
             // Successfully added the record.
-        }
-
-        if(swt.on==TRUE){
-            [self scheduleNotificationForDate: datePicker.date];
-            [todoitemObj setDueDate:datePicker.date];
         }
     }
     
@@ -120,7 +121,7 @@
 - (void)scheduleNotificationForDate:(NSDate *)date
 {
     // Here we cancel all previously scheduled notifications
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+   // [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     
