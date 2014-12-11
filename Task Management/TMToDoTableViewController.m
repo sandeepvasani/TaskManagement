@@ -112,7 +112,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.backgroundColor = [self colorForIndex:indexPath.row];
+    //cell.backgroundColor = [self colorForIndex:indexPath.row];
 }
 
 - (void)resetFetchedResultsController
@@ -194,9 +194,11 @@
    TodoItem *toDoItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     
     cell.textLabel.text = toDoItem.name;
-    if(!([[self formatDate:toDoItem.dueDate] isEqualToString:@"Sat, 12/12/99, 00:00 PM"]))
+    if(!([[self formatDate:toDoItem.dueDate] isEqualToString:@"Sat, 12/12/99, 12:00 PM"]))
     cell.detailTextLabel.text=[self formatDate:toDoItem.dueDate];
     //cell.textLabel.text = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    if(indexPath.row==0)
+        cell.textLabel.textColor=[UIColor redColor];
      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
    
     return cell;
@@ -206,7 +208,7 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateFormat:@"ccc, MM/dd/yy, KK:mm a"];
+    [dateFormatter setDateFormat:@"ccc, MM/dd/yy, hh:mm a"];
     
     NSString *formattedDate = [dateFormatter stringFromDate:date];
     return formattedDate;
@@ -259,6 +261,7 @@
             [alertView show];
             [alertView release];
         }
+        cell.detailTextLabel.text=nil;
         [self resetFetchedResultsController];
         [self.tableView reloadData];
         

@@ -56,7 +56,7 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateFormat:@"ccc, MM/dd/yy, K:m a"];
+    [dateFormatter setDateFormat:@"ccc, MM/dd/yy, hh:mm a"];
     
     NSString *formattedDate = [dateFormatter stringFromDate:date];
     return formattedDate;
