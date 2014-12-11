@@ -59,6 +59,7 @@
     [dateFormatter setDateFormat:@"ccc, MM/dd/yy, hh:mm a"];
     
     NSString *formattedDate = [dateFormatter stringFromDate:date];
+    [dateFormatter release];
     return formattedDate;
 }
 

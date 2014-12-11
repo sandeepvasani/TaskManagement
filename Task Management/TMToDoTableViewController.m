@@ -66,6 +66,7 @@
     
     UINavigationController *addTitleNC = [[UINavigationController alloc] initWithRootViewController:addTitleVC];
     [self presentViewController:addTitleNC animated:YES completion:nil];
+    [addTitleNC release];
 }
 
 
@@ -211,6 +212,7 @@
     [dateFormatter setDateFormat:@"ccc, MM/dd/yy, hh:mm a"];
     
     NSString *formattedDate = [dateFormatter stringFromDate:date];
+    [dateFormatter release];
     return formattedDate;
 }
 /*

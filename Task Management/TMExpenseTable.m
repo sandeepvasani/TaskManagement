@@ -55,8 +55,8 @@
 
 
 - (IBAction)insertNewObject: (id)sender {
-    UIAlertView* alert= [[UIAlertView alloc] initWithTitle:@"New To-Do List"
-                                                   message:@"Title for new list:"
+    UIAlertView* alert= [[UIAlertView alloc] initWithTitle:@"New Expense"
+                                                   message:@"Title for new expense:"
                                                   delegate:self
                                          cancelButtonTitle:@"Cancel"
                                          otherButtonTitles:@"Create", nil];
@@ -243,7 +243,8 @@
     [bottomFloatingView addSubview:lbl2];
 
     [bottomFloatingView addSubview:lbl];
-    
+    [lbl release];
+    [lbl2 release];
     return bottomFloatingView;
 }
 /*

@@ -72,6 +72,7 @@
     [dateFormatter setDateFormat:@"MM'/'dd'/'yyyy"];
     
     NSString *formattedDate = [dateFormatter stringFromDate:date];
+    [dateFormatter release];
     return formattedDate;
 }
 - (void)resetFetchedResultsController
@@ -291,7 +292,7 @@
     
     
     UIAlertView *altnot=[[UIAlertView alloc]initWithTitle:@"SAVED" message:@"SAVED" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    
+    altnot.tag=7;
     [altnot show];
     [altnot release];
    
@@ -300,7 +301,7 @@
 
 - (void)alertView:(UIAlertView *)alert didDismissWithButtonIndex:(NSInteger)buttonIndex {
   
-        
+        if(alert.tag==7)
           [[self navigationController] popViewControllerAnimated:YES];
    
 }
