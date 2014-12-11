@@ -52,8 +52,8 @@
 
 
 - (IBAction)insertNewObject: (id)sender {
-    UIAlertView* alert= [[UIAlertView alloc] initWithTitle:@"New To-Do List"
-                                                   message:@"Title for new list:"
+    UIAlertView* alert= [[UIAlertView alloc] initWithTitle:@"New Login"
+                                                   message:@"Title for new login"
                                                   delegate:self
                                          cancelButtonTitle:@"Cancel"
                                          otherButtonTitles:@"Add", nil];
